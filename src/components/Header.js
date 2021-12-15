@@ -1,6 +1,6 @@
 import React from "react";
 import GalleryBtn from "./GalleryBtn";
-import BorderedBtn from "./borderedBtn";
+import BorderedBtn from "./BorderedBtn";
 import logoImg from "../images/logo.svg";
 
 import "./Header.scss";
