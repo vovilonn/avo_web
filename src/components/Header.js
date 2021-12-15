@@ -1,51 +1,50 @@
 import React from "react";
+import GalleryBtn from "./GalleryBtn";
+import BorderedBtn from "./borderedBtn";
+import logoImg from "../images/logo.svg";
 
-import "./header.scss";
+import "./Header.scss";
 
 export default function Header() {
     return (
-        <header class="header container">
-            <a href="" class="header__logo">
-                <img src="images/logo.svg" alt="" />
+        <header className="header container">
+            <a href="" className="header__logo">
+                <img src={logoImg} alt="logo" />
             </a>
-            <div class="header__block">
-                <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="" class="nav__link">
+            <div className="header__block">
+                <nav className="nav">
+                    <ul className="nav__list">
+                        <li className="nav__item">
+                            <a href="" className="nav__link">
                                 О компании
                             </a>
                         </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">
+                        <li className="nav__item">
+                            <a href="" className="nav__link">
                                 Как это работает
                             </a>
                         </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">
+                        <li className="nav__item">
+                            <a href="" className="nav__link">
                                 Преимущества
                             </a>
                         </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">
+                        <li className="nav__item">
+                            <a href="" className="nav__link">
                                 Команда
                             </a>
                         </li>
-                        <li class="nav__item">
-                            <a href="" class="nav__link">
+                        <li className="nav__item">
+                            <a href="" className="nav__link">
                                 Новости
                             </a>
                         </li>
                     </ul>
                 </nav>
-                <div class="header__buttons">
-                    <button class="header__green-btn green-btn">
-                        <img src="images/btn_img.png" alt="" />
-                        Галерея NFT
-                        <img src="images/arrow.svg" alt="" />
-                    </button>
-                    <button class="header__br-btn border-btn">Авторы</button>
-                    <button class="burger border-btn">
+                <div className="header__buttons">
+                    <GalleryBtn />
+                    <BorderedBtn text="Авторы" />
+                    <button className="burger border-btn">
                         <span></span>
                     </button>
                 </div>
