@@ -11,8 +11,8 @@ export default function Authors() {
         <>
             <BreadCrumbs />
             <Categories />
-            <article class="authors container">
-                <ul class="authors__list">
+            <article className="authors container">
+                <ul className="authors__list">
                     <Author />
                     <Author />
                     <Author />

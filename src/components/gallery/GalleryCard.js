@@ -6,19 +6,19 @@ import "./GalleryCard.scss";
 
 export default function GalleryCard() {
     return (
-        <li class="works__item">
+        <li className="works__item">
             <a href="">
-                <div class="works__img-wrap">
-                    <img src={itemImg} alt="" class="works__img" />
+                <div className="works__img-wrap">
+                    <img src={itemImg} alt="" className="works__img" />
                 </div>
-                <div class="works__title">Название работы</div>
-                <div class="works__block">
-                    <button class="works__btn">
+                <div className="works__title">Название работы</div>
+                <div className="works__block">
+                    <button className="works__btn">
                         <img src={avoImg} alt="" />
                     </button>
-                    <div class="works__heading">
-                        <div class="works__sub-title">Цена</div>
-                        <div class="works__price">3.14 avo</div>
+                    <div className="works__heading">
+                        <div className="works__sub-title">Цена</div>
+                        <div className="works__price">3.14 avo</div>
                     </div>
                 </div>
             </a>

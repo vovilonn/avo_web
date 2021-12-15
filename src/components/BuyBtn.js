@@ -5,7 +5,7 @@ import arrowImg from "../images/arrow_white.svg";
 
 const Buybtn = () => {
     return (
-        <a href="" class="work__btn">
+        <a href="" className="work__btn">
             <img src={telegramImg} alt="" />
             Купить
             <img src={arrowImg} alt="" />

@@ -6,11 +6,7 @@ export default function Categories() {
         <article className="categories container">
             <h2 className="categories__title">Категории</h2>
             <button className="categories__btn mobile">
-                <img
-                    src="images/categories_img-1.svg"
-                    alt=""
-                    className="categories__img"
-                />
+                <img src={categoryImg} alt="" className="categories__img" />
                 DigitalArt
             </button>
             <ul className="categories__list">
