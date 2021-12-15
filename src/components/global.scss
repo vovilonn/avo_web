@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-SemiBold.eot");
+    src: local("Gilroy SemiBold"), local("Gilroy-SemiBold"),
+        url("../fonts/Gilroy-SemiBold.eot") format("embedded-opentype"),
+        url("../fonts/Gilroy-SemiBold.woff") format("woff"),
+        url("../fonts/Gilroy-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Medium.eot");
+    src: local("Gilroy Medium"), local("Gilroy-Medium"),
+        url("../fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Gilroy-Medium.woff") format("woff"),
+        url("../fonts/Gilroy-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Regular.eot");
+    src: local("Gilroy Regular"), local("Gilroy-Regular"),
+        url("../fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Gilroy-Regular.woff") format("woff"),
+        url("../fonts/Gilroy-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("../fonts/Gilroy-Light.eot");
+    src: local("Gilroy Light"), local("Gilroy-Light"),
+        url("../fonts/Gilroy-Light.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Gilroy-Light.woff") format("woff"),
+        url("../fonts/Gilroy-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Georgia Pro";
+    src: url("../fonts/GeorgiaPro-Semibold.eot");
+    src: local("Gilroy SemiBold"), local("Gilroy-SemiBold"),
+        url("../fonts/GeorgiaPro-Semibold.eot?#iefix")
+            format("embedded-opentype"),
+        url("../fonts/GeorgiaPro-Semibold.woff") format("woff"),
+        url("../fonts/GeorgiaPro-Semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+* {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy", sans-serif;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1145px) {
+    .container {
+        padding: 0 20px;
+    }
+}
