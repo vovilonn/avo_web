@@ -4,13 +4,14 @@ import BorderedBtn from "./BorderedBtn";
 import logoImg from "../images/logo.svg";
 
 import "./Header.scss";
+import { Link } from "gatsby";
 
 export default function Header() {
     return (
         <header className="header container">
-            <a href="" className="header__logo">
+            <Link to="/" className="header__logo">
                 <img src={logoImg} alt="logo" />
-            </a>
+            </Link>
             <div className="header__block">
                 <nav className="nav">
                     <ul className="nav__list">
@@ -42,8 +43,8 @@ export default function Header() {
                     </ul>
                 </nav>
                 <div className="header__buttons">
-                    <GalleryBtn />
-                    <BorderedBtn text="Авторы" />
+                    <GalleryBtn to="/gallery-nft" />
+                    <BorderedBtn text="Авторы" to="/authors" />
                     <button className="burger border-btn">
                         <span></span>
                     </button>

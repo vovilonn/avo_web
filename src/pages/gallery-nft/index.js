@@ -25,7 +25,7 @@ export default function GalleryNFT() {
                     </ul>
                 </div>
             </article>
-            <Gallery />
+            <Gallery type="all" />
         </>
     );
 }

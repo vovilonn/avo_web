@@ -6,15 +6,16 @@ import instagramImg from "../images/instagram.png";
 import avoImg from "../images/avo.svg";
 
 import "./Footer.scss";
+import { Link } from "gatsby";
 
 const Footer = () => {
     return (
         <footer className="footer">
             <div className="container" id="footer__content">
                 <div className="footer__block">
-                    <a href="" className="footer__logo">
+                    <Link to="/" className="footer__logo">
                         <img src={logoImg} alt="" />
-                    </a>
+                    </Link>
                     <div className="footer__desc">
                         AVOCADO - первый NFT маркетплейс в Telegram!
                     </div>
@@ -79,7 +80,11 @@ const Footer = () => {
                         </li>
                     </ul>
                 </nav>
-                <a href="" className="footer__btn green-btn">
+                <a
+                    href="https://t.me/AvoNFT_bot"
+                    target="_blank"
+                    className="footer__btn green-btn"
+                >
                     <img src={avoImg} alt="" /> Начать пользоваться
                 </a>
             </div>

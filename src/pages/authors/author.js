@@ -1,14 +1,28 @@
-import React from "react";
-import Gallery from "../components/gallery/Gallery";
+import React, { useState, useEffect } from "react";
+import Gallery from "../../components/gallery/Gallery";
+import axios from "axios";
+import queryString from "query-string";
+import telegramImg from "../../images/telegram.png";
+import facebookImg from "../../images/facebook.png";
+import instagramImg from "../../images/instagram.png";
+import tickImg from "../../images/tick.svg";
+import authorImg from "../../images/people_big-img.png";
+import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-import telegramImg from "../images/telegram.png";
-import facebookImg from "../images/facebook.png";
-import instagramImg from "../images/instagram.png";
-import tickImg from "../images/tick.svg";
-import authorImg from "../images/people_big-img.png";
-import BreadCrumbs from "../components/bread_crumbs/BreadCrumbs";
+export default function Author() {
+    const query = queryString.parse(window.location.search);
+    const [author, setAuthor] = useState({});
 
-export default function author() {
+    useEffect(() => {
+        (async function getData() {
+            const res = await axios.get(
+                `https://avonft.io/api/author/${query.id}`
+            );
+            console.log(res.data);
+            setAuthor(res.data);
+        })();
+    }, []);
     return (
         <>
             <article className="work container">
@@ -16,25 +30,13 @@ export default function author() {
                 <div className="work__wrap">
                     <div className="work__content">
                         <h1 className="work__title">
-                            Жуков Аркадий <img src={tickImg} alt="" />
+                            {author.name} <img src={tickImg} alt="" />
                         </h1>
                         <div className="work__descriptions">
                             <div className="work__caption line">
                                 Краткое описание
                             </div>
-                            <p className="work__desc">
-                                AVONFT - Это платформа для токенизации объектов
-                                искусства посредством генерации NFT (Уникальных
-                                невзаимозаменяемых токенов). Мы стремимся
-                                создать технологичный и справедливый рынок прав
-                                интеллектуальной собственности.
-                            </p>
-                            <p className="work__desc">
-                                Таким образом наши пользователи смогут
-                                приобщиться к миру цифрового искусства, а авторы
-                                - токенизировать своё творчество и дополнительно
-                                заработать на этом...
-                            </p>
+                            <p className="work__desc">{author.description}</p>
                             <a href="" className="work__more">
                                 Развернуть
                             </a>
@@ -62,12 +64,24 @@ export default function author() {
                             Жуков Аркадий <img src={tickImg} alt="" />
                         </h1>
                         <div className="work__img-wrap">
-                            <img src={authorImg} alt="" className="work__img" />
+                            <LazyLoadImage
+                                width="100%"
+                                height="100%"
+                                effect="blur"
+                                src={authorImg}
+                                alt=""
+                                className="work__img"
+                            />
                         </div>
                     </div>
                 </div>
             </article>
-            <Gallery />
+
+            {author.id ? (
+                <Gallery type="by-author" authorId={author.id} />
+            ) : (
+                "Loading..."
+            )}
         </>
     );
 }

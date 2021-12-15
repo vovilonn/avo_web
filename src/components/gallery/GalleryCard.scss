@@ -1,6 +1,6 @@
 .works__item {
     width: calc(100% / 4 - 90px / 4);
-    background: #FFFFFF;
+    background: #ffffff;
     box-shadow: 0 4px 39px rgba(49, 23, 100, 0.2);
     border-radius: 20px;
     padding: 14px;
@@ -14,19 +14,27 @@
 
 .works__img-wrap {
     width: 100%;
+    position: relative;
     overflow: hidden;
     border-radius: 20px;
     margin-bottom: 15px;
 }
 
 .works__item:hover .works__img {
-    transform: scale(1.2);
+    width: 120%;
+    height: 120%;
 }
 
 .works__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
+    height: 100%;
     border-radius: 20px;
-    transition: all .3s;
+    object-fit: cover;
+    transition: all 0.3s;
 }
 
 .works__title {
@@ -41,17 +49,17 @@
 }
 
 .works__btn {
-    border-radius: 12px;
     padding: 8px 10px;
     background: none;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    border: none;
 }
 
 .works__btn > img {
     width: 18px;
 }
 
-.works__heading {}
+.works__heading {
+}
 
 .works__sub-title {
     font-size: 12px;

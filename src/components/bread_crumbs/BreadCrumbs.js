@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import avoImg from "../../images/avo.svg";
 
@@ -6,7 +6,10 @@ import "./BreadCrumbs.scss";
 import BreadCrumbsItem from "./BreadCrumbsItem";
 
 export default function BreadCrumbs() {
-    const url = document.URL;
+    const [url, setUrl] = useState(document.URL);
+    // useEffect(() => {
+    //     setUrl(document.URL);
+    // }, []);
 
     const objectOfMatches = {
         "gallery-nft": "Галерея NFT",
@@ -32,13 +35,17 @@ export default function BreadCrumbs() {
             <ul className="bread-crumbs__list">
                 <BreadCrumbsItem text="Главная" to="/" />
 
-                {getPagesFromUrl(url).map((currentPage, i) => (
-                    <BreadCrumbsItem
-                        text={objectOfMatches[currentPage]}
-                        to={makeUrl(currentPage)}
-                        key={i}
-                    />
-                ))}
+                {getPagesFromUrl(url).map((currentPage, i) =>
+                    currentPage ? (
+                        <BreadCrumbsItem
+                            text={objectOfMatches[currentPage]}
+                            to={makeUrl(currentPage)}
+                            key={i}
+                        />
+                    ) : (
+                        ""
+                    )
+                )}
             </ul>
         </div>
     );

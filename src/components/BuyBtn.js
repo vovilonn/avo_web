@@ -3,9 +3,9 @@ import React from "react";
 import telegramImg from "../images/telegram_1.svg";
 import arrowImg from "../images/arrow_white.svg";
 
-const Buybtn = () => {
+const Buybtn = ({ href }) => {
     return (
-        <a href="" className="work__btn">
+        <a href={href} target="_blank" className="work__btn">
             <img src={telegramImg} alt="" />
             Купить
             <img src={arrowImg} alt="" />
