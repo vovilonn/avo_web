@@ -20,8 +20,12 @@ export default function GalleryCard({ nft }) {
                         width="100%"
                         className="works__img"
                     /> */}
-                    <SmoothLoadedImage src={nft.img} className="works__img"  height="200px"
-                        width="100%"/>
+                    <SmoothLoadedImage
+                        src={nft.img}
+                        className="works__img"
+                        height="200px"
+                        width="100%"
+                    />
                 </div>
                 <div className="works__title">{nft.title}</div>
                 <div className="works__block">
@@ -36,4 +40,4 @@ export default function GalleryCard({ nft }) {
             </Link>
         </li>
     );
-} 
+}

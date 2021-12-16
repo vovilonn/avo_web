@@ -108,7 +108,7 @@ const NftPage = () => {
                         </h1>
                         <div
                             className="work__img-wrap"
-                            style={{ minHeight: "536px" }}
+                            style={{ minHeight: "200px" }}
                         >
                             <a
                                 href={nft.img}
@@ -121,8 +121,8 @@ const NftPage = () => {
                             {nft.id ? (
                                 <SmoothLoadedImage
                                     src={nft.img}
-                                    width="auto"
-                                    height="500px"
+                                    width="100%"
+                                    height="auto"
                                     className="work__img"
                                 />
                             ) : (
