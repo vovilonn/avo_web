@@ -239,6 +239,7 @@ body {
 }
 
 .work__img-wrap {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,7 +255,7 @@ body {
 
 .work__download {
     position: absolute;
-    background: rgba(255, 255, 255, 0.55);
+    background: #b8bacb8c;
     box-shadow: 0 0 39px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
     border-radius: 7px;
@@ -264,7 +265,8 @@ body {
 }
 
 .work__img {
-    width: 100%;
+    width: auto;
+    height: 500px;
     border-radius: 20px;
 }
 

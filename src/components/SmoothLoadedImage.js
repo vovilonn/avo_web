@@ -1,32 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { LazyLoadComponent } from "react-lazy-load-image-component";
 
-export default function SmoothLoadedImage({ src, alt, placeholder, className, width, height }) {
+import "./SmoothLoadedImage.scss";
+
+export default function SmoothLoadedImage({
+    src,
+    alt,
+    className,
+    width,
+    height,
+    minHeight,
+}) {
     const [image, setImage] = useState(null);
     // const SmoothLoadImage = new Image();
 
     useEffect(() => {
-       setTimeout(() => {
-        const SmoothLoadImage = React.createElement(
-        "img",
-        {
-           
-            src: src,
-            alt: alt,
-            className: className,
-        },
-        null
-    ); setImage(SmoothLoadImage);
-       }, 2000);
-       
-        // SmoothLoadImage.onLoad = () => setImage(SmoothLoadImage);
+        setTimeout(() => {
+            const SmoothLoadImage = React.createElement(
+                "img",
+                {
+                    src: src,
+                    alt: alt,
+                    className: className,
+                },
+                null
+            );
+            setImage(SmoothLoadImage);
+        }, 100);
     }, []);
-
-    
 
     return (
         <LazyLoadComponent>
-            <span style={{height, width, display: "inline-block"}}>{image || placeholder || ""}</span>
+            <span
+                style={{ height, width, minHeight }}
+                className={`image__wrap ${image ? "loaded" : ""}`}
+            >
+                {image || ""}
+            </span>
         </LazyLoadComponent>
     );
 }

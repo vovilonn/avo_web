@@ -11,11 +11,11 @@ import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Author() {
-    const query = queryString.parse(window.location.search);
     const [author, setAuthor] = useState({});
 
     useEffect(() => {
         (async function getData() {
+            const query = queryString.parse(window.location.search);
             const res = await axios.get(
                 `https://avonft.io/api/author/${query.id}`
             );

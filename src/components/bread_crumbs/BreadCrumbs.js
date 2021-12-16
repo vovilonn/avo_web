@@ -6,10 +6,10 @@ import "./BreadCrumbs.scss";
 import BreadCrumbsItem from "./BreadCrumbsItem";
 
 export default function BreadCrumbs() {
-    const [url, setUrl] = useState(document.URL);
-    // useEffect(() => {
-    //     setUrl(document.URL);
-    // }, []);
+    const [url, setUrl] = useState("");
+    useEffect(() => {
+        setUrl(document.URL);
+    }, []);
 
     const objectOfMatches = {
         "gallery-nft": "Галерея NFT",

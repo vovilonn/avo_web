@@ -11,13 +11,14 @@ import downloadImg from "../../images/download.svg";
 import "../nft.scss";
 import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
 import { Link } from "gatsby";
+import SmoothLoadedImage from "../../components/SmoothLoadedImage";
 
 const NftPage = () => {
-    const query = queryString.parse(window.location.search);
     const [nft, setNft] = useState({});
 
     useEffect(() => {
         (async function getData() {
+            const query = queryString.parse(window.location.search);
             const res = await axios.get(
                 `https://avonft.io/api/nft/${query.id}`
             );
@@ -28,7 +29,7 @@ const NftPage = () => {
 
     return (
         <>
-            <article className="work container">
+            <article className="work container" style={{ minHeight: "55vw" }}>
                 <BreadCrumbs />
                 <div className="work__wrap">
                     <div className="work__content">
@@ -105,7 +106,10 @@ const NftPage = () => {
                                 <span>ID</span> {nft.id}
                             </span>
                         </h1>
-                        <div className="work__img-wrap">
+                        <div
+                            className="work__img-wrap"
+                            style={{ minHeight: "536px" }}
+                        >
                             <a
                                 href={nft.img}
                                 download
@@ -114,7 +118,16 @@ const NftPage = () => {
                             >
                                 <img src={downloadImg} alt="" />
                             </a>
-                            <img src={nft.img} alt="" className="work__img" />
+                            {nft.id ? (
+                                <SmoothLoadedImage
+                                    src={nft.img}
+                                    width="auto"
+                                    height="500px"
+                                    className="work__img"
+                                />
+                            ) : (
+                                ""
+                            )}
                         </div>
                     </div>
                 </div>
