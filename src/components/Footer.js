@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
                     <ul className="footer__socials">
                         <li className="footer__social">
-                            <a href="">
+                            <a href="https://t.me/AvoNFT_bot" target="_blank">
                                 <img src={telegramImg} alt="" />
                             </a>
                         </li>

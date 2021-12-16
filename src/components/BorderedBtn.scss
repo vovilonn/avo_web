@@ -4,7 +4,7 @@
     font-size: 14px;
     cursor: pointer;
     background: #fff;
-    padding: 10px;
+    padding: 15px 30px;
     border-radius: 25px 8px;
     max-width: 122px;
     width: 100%;
@@ -14,7 +14,8 @@
     transition: all 0.3s;
 
     &:hover {
-        transform: scale(1.12);
+        // transform: scale(1.12);
+        background: rgba($color: #fff, $alpha: 0);
     }
 
     &:before {
@@ -29,5 +30,9 @@
         border-radius: 25px 8px;
         transition: all 0.3s;
         background: linear-gradient(101.52deg, #e1e53c 31.48%, #acd044 74.87%);
+    }
+
+    @media (max-width: 950px) {
+        padding: 10px;
     }
 }

@@ -1,36 +1,39 @@
 import React from "react";
+import { connect } from "react-redux";
 
-export default function MobileNavbar() {
+import "./MobileNavbar.scss";
+
+function MobileNavbar() {
     return (
-        <nav className="menu">
-            <ul className="menu__list">
-                <li className="menu__item">
-                    <a href="" className="menu__link">
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="" class="menu__link">
                         О компании
                     </a>
                 </li>
-                <li className="menu__item">
-                    <a href="" className="menu__link">
+                <li class="menu__item">
+                    <a href="" class="menu__link">
                         Как это работает
                     </a>
                 </li>
-                <li className="menu__item">
-                    <a href="" className="menu__link">
+                <li class="menu__item">
+                    <a href="" class="menu__link">
                         Преимущества
                     </a>
                 </li>
-                <li className="menu__item">
-                    <a href="" className="menu__link">
+                <li class="menu__item">
+                    <a href="" class="menu__link">
                         Команда
                     </a>
                 </li>
-                <li className="menu__item">
-                    <a href="" className="menu__link">
+                <li class="menu__item">
+                    <a href="" class="menu__link">
                         Новости
                     </a>
                 </li>
-                <li className="menu__item">
-                    <a href="" className="menu__link">
+                <li class="menu__item">
+                    <a href="" class="menu__link">
                         Авторы
                     </a>
                 </li>
@@ -38,3 +41,7 @@ export default function MobileNavbar() {
         </nav>
     );
 }
+
+const mstp = (state) => ({});
+
+export default connect(mstp)(MobileNavbar);
