@@ -1,39 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { toggleMenuAction } from "../redux/actions/menu.action";
+import { useSwipeable } from "react-swipeable";
 
 import "./MobileNavbar.scss";
 
-function MobileNavbar() {
+function MobileNavbar({ opened, toggleMenu }) {
+    useEffect(() => {
+        document.body.style.overflow = opened ? "hidden" : "initial";
+    }, [opened]);
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: () => toggleMenu(false),
+    });
+
     return (
-        <nav class="menu">
-            <ul class="menu__list">
-                <li class="menu__item">
-                    <a href="" class="menu__link">
+        <nav className={`menu ${opened ? "visible" : ""}`} {...swipeHandlers}>
+            <ul className="menu__list">
+                <li className="menu__item">
+                    <a href="" className="menu__link">
                         О компании
                     </a>
                 </li>
-                <li class="menu__item">
-                    <a href="" class="menu__link">
+                <li className="menu__item">
+                    <a href="" className="menu__link">
                         Как это работает
                     </a>
                 </li>
-                <li class="menu__item">
-                    <a href="" class="menu__link">
+                <li className="menu__item">
+                    <a href="" className="menu__link">
                         Преимущества
                     </a>
                 </li>
-                <li class="menu__item">
-                    <a href="" class="menu__link">
+                <li className="menu__item">
+                    <a href="" className="menu__link">
                         Команда
                     </a>
                 </li>
-                <li class="menu__item">
-                    <a href="" class="menu__link">
+                <li className="menu__item">
+                    <a href="" className="menu__link">
                         Новости
                     </a>
                 </li>
-                <li class="menu__item">
-                    <a href="" class="menu__link">
+                <li className="menu__item">
+                    <a href="" className="menu__link">
                         Авторы
                     </a>
                 </li>
@@ -42,6 +51,11 @@ function MobileNavbar() {
     );
 }
 
-const mstp = (state) => ({});
+const mstp = ({ menu }) => ({
+    opened: menu.menuIsActive,
+});
+const mdtp = (dispatch) => ({
+    toggleMenu: () => dispatch(toggleMenuAction()),
+});
 
-export default connect(mstp)(MobileNavbar);
+export default connect(mstp, mdtp)(MobileNavbar);

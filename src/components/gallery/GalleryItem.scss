@@ -1,5 +1,7 @@
 .gallery__item {
     width: calc(100% / 3 - 5px);
+    height: auto;
+    background: #c9c9c9;
     margin-bottom: 10px;
     overflow: hidden;
     border-radius: 20px;

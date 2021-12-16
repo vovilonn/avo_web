@@ -30,13 +30,16 @@
         "gatsby-plugin-typescript": "^4.4.0",
         "gatsby-source-filesystem": "^4.3.0",
         "gatsby-transformer-sharp": "^4.3.0",
+        "loaders.css": "^0.1.2",
         "query-string": "^7.0.1",
         "react": "^17.0.1",
+        "react-content-loader": "^6.1.0",
         "react-dom": "^17.0.1",
         "react-helmet": "^6.1.0",
         "react-lazy-load-image-component": "^1.5.1",
+        "react-loaders": "^3.0.1",
         "react-redux": "^7.2.6",
-        "redux": "^4.1.2",
+        "react-swipeable": "^6.2.0",
         "sass": "^1.45.0"
     },
     "devDependencies": {

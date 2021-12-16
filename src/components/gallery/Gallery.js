@@ -3,8 +3,7 @@ import axios from "axios";
 import Categories from "../Categories.js";
 import GalleryCard from "./GalleryCard.js";
 import LoadMoreBtn from "../LoadMoreBtn";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-
+import ImageGrid from "../loaders/GalleryGrid.js";
 export default function Gallery({ type = "all", authorId }) {
     const [nfts, setNfts] = useState([]);
 
@@ -45,6 +44,7 @@ export default function Gallery({ type = "all", authorId }) {
                     {nfts.map((nft) => (
                         <GalleryCard nft={nft} key={nft.id} />
                     ))}
+                    {/* <ImageGrid /> should be visible on loading*/}
                 </ul>
                 <LoadMoreBtn />
             </article>

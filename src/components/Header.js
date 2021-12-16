@@ -5,6 +5,7 @@ import logoImg from "../images/logo.svg";
 
 import "./Header.scss";
 import { Link } from "gatsby";
+import BurgerMenuBtn from "./BurgerMenuBtn";
 
 export default function Header() {
     return (
@@ -45,9 +46,7 @@ export default function Header() {
                 <div className="header__buttons">
                     <GalleryBtn to="/gallery-nft" />
                     <BorderedBtn text="Авторы" to="/authors" />
-                    <button className="burger border-btn">
-                        <span></span>
-                    </button>
+                    <BurgerMenuBtn />
                 </div>
             </div>
         </header>

@@ -1,3 +1,3 @@
 import { createAction } from "@reduxjs/toolkit";
 
-export const toggleMenu = createAction<boolean>("menu/toggle");
+export const toggleMenuAction = createAction<boolean>("menu/toggle");
