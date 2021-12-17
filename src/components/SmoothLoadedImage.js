@@ -27,7 +27,7 @@ export default function SmoothLoadedImage({
             );
             setImage(SmoothLoadImage);
         }, 100);
-    }, []);
+    }, [src]);
     if (lazy) {
         return (
             <LazyLoadComponent>
