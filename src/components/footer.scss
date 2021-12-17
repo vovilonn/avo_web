@@ -26,11 +26,21 @@
     margin-bottom: 13px;
 }
 
-.footer__socials {
+.footer__socials__container {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    max-width: 120px;
+    border-radius: 8px 16px;
+    position: absolute;
+    z-index: 9999;
+    background: #c6c6e3cc;
+    padding: 5px 8px;
+    bottom: 7%;
+    left: 8%;
+}
+
+.footer__social {
+    margin: 0 4px;
 }
 
 .footer__social {
@@ -161,7 +171,7 @@
         align-items: center;
         margin-bottom: 20px;
     }
-    .footer__socials,
+
     .footer__nav {
         width: 100%;
     }

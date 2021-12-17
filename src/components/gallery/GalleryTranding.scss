@@ -1,0 +1,13 @@
+.gallery__wrap {
+    display: flex;
+}
+@media (max-width: 520px) {
+    .gallery__wrap {
+        max-width: 100%;
+    }
+}
+@media (max-width: 840px) {
+    .gallery__wrap {
+        flex-direction: column;
+    }
+}

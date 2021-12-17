@@ -6,10 +6,6 @@
     padding-top: 15px;
 }
 
-.gallery__wrap {
-    display: flex;
-}
-
 .gallery__list {
     list-style: none;
     display: flex;
@@ -124,9 +120,6 @@
 }
 
 @media (max-width: 840px) {
-    .gallery__wrap {
-        flex-direction: column;
-    }
     .gallery__item.big {
         width: 80%;
         margin: 0 auto;
@@ -139,9 +132,6 @@
 }
 
 @media (max-width: 520px) {
-    .gallery__wrap {
-        max-width: 100%;
-    }
     .gallery__list {
         overflow: scroll;
         flex-wrap: nowrap;

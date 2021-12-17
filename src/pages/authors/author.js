@@ -10,6 +10,7 @@ import authorImg from "../../images/people_big-img.png";
 import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import SmoothLoadedImage from "../../components/SmoothLoadedImage";
+import WokrDescription from "../../components/WokrDescription";
 
 export default function Author() {
     const [author, setAuthor] = useState({});
@@ -34,37 +35,35 @@ export default function Author() {
                             {author.name} <img src={tickImg} alt="" />
                         </h1>
                         <div className="work__descriptions">
-                            <div className="work__caption line">
-                                Краткое описание
-                            </div>
-                            <p className="work__desc">{author.description}</p>
-                            <a href="" className="work__more">
-                                Развернуть
-                            </a>
+                            {author.description ? (
+                                <WokrDescription text={author.description} />
+                            ) : (
+                                ""
+                            )}
                         </div>
-                        <ul className="footer__socials">
-                            <li className="footer__social">
-                                <a href="">
-                                    <img src={telegramImg} alt="" />
-                                </a>
-                            </li>
-                            <li className="footer__social">
-                                <a href="">
-                                    <img src={facebookImg} alt="" />
-                                </a>
-                            </li>
-                            <li className="footer__social">
-                                <a href="">
-                                    <img src={instagramImg} alt="" />
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                     <div className="work__block">
                         <h1 className="work__title mobile">
                             {author.name} <img src={tickImg} alt="" />
                         </h1>
                         <div className="work__img-wrap">
+                            <ul className="footer__socials__container">
+                                <li className="footer__social">
+                                    <a href="">
+                                        <img src={telegramImg} alt="" />
+                                    </a>
+                                </li>
+                                <li className="footer__social">
+                                    <a href="">
+                                        <img src={facebookImg} alt="" />
+                                    </a>
+                                </li>
+                                <li className="footer__social">
+                                    <a href="">
+                                        <img src={instagramImg} alt="" />
+                                    </a>
+                                </li>
+                            </ul>
                             {authorImg ? (
                                 <SmoothLoadedImage
                                     src={authorImg}

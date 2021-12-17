@@ -12,6 +12,7 @@ import "../nft.scss";
 import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
 import { Link } from "gatsby";
 import SmoothLoadedImage from "../../components/SmoothLoadedImage";
+import WokrDescription from "../../components/WokrDescription";
 
 const NftPage = () => {
     const [nft, setNft] = useState({});
@@ -40,13 +41,11 @@ const NftPage = () => {
                             </span>
                         </h1>
                         <div className="work__descriptions">
-                            <div className="work__caption line">
-                                Краткое описание
-                            </div>
-                            <p className="work__desc">{nft.description}</p>
-                            <a href="" className="work__more">
-                                Развернуть
-                            </a>
+                            {nft.description ? (
+                                <WokrDescription text={nft.description} />
+                            ) : (
+                                ""
+                            )}
                             <div className="work__token">
                                 <a
                                     href="https://bscscan.com/address/0x721B6EF510fA0C6EecD4BaB055724B0CA6478503"

@@ -12,6 +12,7 @@ export default function Gallery({ type = "all", authorId }) {
 
     const [pagesLoaded, setPagesLoaded] = useState(1);
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getData();
@@ -19,6 +20,7 @@ export default function Gallery({ type = "all", authorId }) {
 
     async function getData() {
         try {
+            setLoading(true);
             let res;
             switch (type) {
                 case "all":
@@ -47,6 +49,9 @@ export default function Gallery({ type = "all", authorId }) {
             const updatenData = [...data, ...res.data];
 
             setData(updatenData);
+            setTimeout(() => {
+                setLoading(false);
+            }, 350);
         } catch (err) {
             console.error(err);
         }
@@ -70,6 +75,7 @@ export default function Gallery({ type = "all", authorId }) {
                 <LoadMoreBtn
                     pagesLoaded={pagesLoaded}
                     setPagesLoaded={setPagesLoaded}
+                    loading={loading}
                 />
             </article>
         </>
