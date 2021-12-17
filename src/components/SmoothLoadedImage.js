@@ -33,7 +33,7 @@ export default function SmoothLoadedImage({
             <LazyLoadComponent>
                 <span
                     style={{ height, width }}
-                    className={`image__wrap ${image ? "loaded" : ""}`}
+                    className={`image__wrap ${image && "loaded"}`}
                 >
                     {image || ""}
                 </span>
@@ -43,7 +43,7 @@ export default function SmoothLoadedImage({
         return (
             <span
                 style={{ height, width }}
-                className={`image__wrap ${image ? "loaded" : ""}`}
+                className={`image__wrap ${image && "loaded"}`}
             >
                 {image || ""}
             </span>

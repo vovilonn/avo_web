@@ -1,6 +1,7 @@
 .gallery__item.big {
     width: calc(40% - 10px);
     margin-right: 10px;
+    max-height: 456px;
 }
 
 .gallery__item.big .gallery__title {
@@ -30,6 +31,7 @@
     .gallery__item.big {
         width: 80%;
         margin: 0 auto;
+        max-height: none;
     }
 }
 

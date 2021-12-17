@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GalleryCategoriesBtn from "./CategoriesBtn";
-import categoryImg from "../images/categories_img-1.svg";
-export default function Categories() {
+import axios from "axios";
+import categoryImg from "../images/categories_img-10.svg";
+import { connect } from "react-redux";
+import { setCategoryAction } from "../redux/actions/gallery.action";
+
+function Categories({ type = "nft", setCategory }) {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        getCategories();
+        return () => setCategory(null);
+    }, []);
+
+    async function getCategories() {
+        let res;
+        switch (type) {
+            case "nft":
+                res = await axios.get("https://avonft.io/api/category/nft");
+                break;
+
+            case "by-author":
+                res = await axios.get("https://avonft.io/api/category/nft");
+                break;
+
+            case "authors":
+                res = await axios.get("https://avonft.io/api/category/author");
+                break;
+
+            default:
+                break;
+        }
+        setCategories(res.data);
+    }
+
     return (
         <article className="categories container">
             <h2 className="categories__title">Категории</h2>
@@ -10,18 +42,27 @@ export default function Categories() {
                 DigitalArt
             </button>
             <ul className="categories__list">
-                <GalleryCategoriesBtn text="DigitalArt" img={categoryImg} />
-                <GalleryCategoriesBtn text="Видео" img={categoryImg} />
+                {categories.map((category) => (
+                    <GalleryCategoriesBtn
+                        text={category.name}
+                        id={category.id}
+                        key={category.id}
+                    />
+                ))}
+
                 <GalleryCategoriesBtn
-                    text="Детское творчество"
+                    text="Все NFT"
+                    id={null}
                     img={categoryImg}
                 />
-                <GalleryCategoriesBtn text="Другое" img={categoryImg} />
-                <GalleryCategoriesBtn text="Живопись" img={categoryImg} />
-                <GalleryCategoriesBtn text="Литература" img={categoryImg} />
-                <GalleryCategoriesBtn text="Музыка" img={categoryImg} />
-                <GalleryCategoriesBtn text="Все NFT" img={categoryImg} />
             </ul>
         </article>
     );
 }
+
+const mstp = () => ({});
+const mdtp = (dispatch) => ({
+    setCategory: (categoryId) => dispatch(setCategoryAction(categoryId)),
+});
+
+export default connect(mstp, mdtp)(Categories);

@@ -26,12 +26,15 @@ const Footer = () => {
                             </a>
                         </li>
                         <li className="footer__social">
-                            <a href="">
+                            <a href="" target="_blank">
                                 <img src={facebookImg} alt="" />
                             </a>
                         </li>
                         <li className="footer__social">
-                            <a href="">
+                            <a
+                                href="https://www.instagram.com/avocadonft/?utm_medium=copy_link"
+                                target="_blank"
+                            >
                                 <img src={instagramImg} alt="" />
                             </a>
                         </li>

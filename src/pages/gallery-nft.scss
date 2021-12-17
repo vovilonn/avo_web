@@ -55,9 +55,14 @@
     font-size: 14px;
     color: #fff;
     max-width: 115px;
+    margin-bottom: 10px;
 }
 
 .gallery__block {
+    white-space: nowrap;
+    background: #bfbbc582;
+    padding: 3px 8px;
+    border-radius: 6px;
 }
 
 .gallery__heading {
@@ -150,12 +155,9 @@
     .gallery__item.big .gallery__block {
         display: block;
     }
-    .gallery__block {
-        display: none;
-    }
+
     .gallery__title {
-        max-width: 100%;
-        font-size: 10px;
+        display: none;
     }
     .gallery__content {
         padding: 0 7px 10px;

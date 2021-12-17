@@ -1,8 +1,10 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { galleryReducer } from "./reducers/gallery.reducer";
 import { menuReducer } from "./reducers/ui/menu.reducer";
 
 const rootReducer = combineReducers({
     menu: menuReducer,
+    gallery: galleryReducer,
 });
 
 export const store = configureStore({
