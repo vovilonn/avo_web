@@ -4,7 +4,14 @@ import { setCategoryAction } from "../redux/actions/gallery.action";
 import "./CategoriesBtn.scss";
 import BallScaleLoader from "./loaders/BallScaleLoader";
 
-const CategoriesBtn = ({ text, id, img, setCategory, category }) => {
+const CategoriesBtn = ({
+    text,
+    id,
+    img,
+    setCategory,
+    category,
+    setPagesLoaded,
+}) => {
     const [categoryImg, setCategoryImg] = useState({ default: img || null });
 
     useEffect(() => {
@@ -14,7 +21,13 @@ const CategoriesBtn = ({ text, id, img, setCategory, category }) => {
     }, []);
 
     return (
-        <li className="categories__item" onClick={() => setCategory(id)}>
+        <li
+            className="categories__item"
+            onClick={() => {
+                setPagesLoaded({ current: 1, prev: 1 });
+                setCategory(id);
+            }}
+        >
             <span
                 className={`categories__btn ${category === id ? "active" : ""}`}
             >

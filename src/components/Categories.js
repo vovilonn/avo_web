@@ -5,7 +5,7 @@ import categoryImg from "../images/categories_img-10.svg";
 import { connect } from "react-redux";
 import { setCategoryAction } from "../redux/actions/gallery.action";
 
-function Categories({ type = "nft", setCategory }) {
+function Categories({ type = "nft", setCategory, setPagesLoaded }) {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -47,6 +47,7 @@ function Categories({ type = "nft", setCategory }) {
                         text={category.name}
                         id={category.id}
                         key={category.id}
+                        setPagesLoaded={setPagesLoaded}
                     />
                 ))}
 
@@ -54,6 +55,7 @@ function Categories({ type = "nft", setCategory }) {
                     text="Все NFT"
                     id={null}
                     img={categoryImg}
+                    setPagesLoaded={setPagesLoaded}
                 />
             </ul>
         </article>
