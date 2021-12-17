@@ -47,7 +47,20 @@ export default function Author() {
                             {author.name} <img src={tickImg} alt="" />
                         </h1>
                         <div className="work__img-wrap">
-                            <ul className="footer__socials__container">
+                            <ul
+                                className="footer__socials__container"
+                                style={{
+                                    listStyle: "none",
+                                    justifyContent: "space-between",
+                                    borderRadius: "8px 16px",
+                                    position: "absolute",
+                                    zIndex: "9999",
+                                    background: " #c6c6e3cc",
+                                    padding: "5px 8px",
+                                    bottom: "7%",
+                                    left: "8%",
+                                }}
+                            >
                                 <li className="footer__social">
                                     <a href="">
                                         <img src={telegramImg} alt="" />
