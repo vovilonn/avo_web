@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import MobileNavbar from "./MobileNavbar";
@@ -7,10 +7,15 @@ import { connect } from "react-redux";
 import { useSwipeable } from "react-swipeable";
 
 function App({ children, toggleMenu }) {
+    const [innerWidth, setInnerWidth] = useState();
     const swipeHandlers = useSwipeable({
         onSwipedRight: () => toggleMenu(true),
-        delta: { right: window.innerWidth - window.innerWidth * 0.4 },
+        delta: { right: innerWidth * 0.6 },
     });
+
+    useEffect(() => {
+        setInnerWidth(window.innerWidth);
+    }, []);
 
     return (
         <div {...swipeHandlers}>
