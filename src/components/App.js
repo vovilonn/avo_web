@@ -9,6 +9,7 @@ import { useSwipeable } from "react-swipeable";
 function App({ children, toggleMenu }) {
     const swipeHandlers = useSwipeable({
         onSwipedRight: () => toggleMenu(true),
+        delta: { right: window.innerWidth - window.innerWidth * 0.4 },
     });
 
     return (
