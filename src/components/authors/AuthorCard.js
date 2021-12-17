@@ -6,12 +6,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import "./Author.scss";
 import { Link } from "gatsby";
-const Author = ({ author }) => {
+import SmoothLoadedImage from "../SmoothLoadedImage";
+const AuthorCard = ({ author }) => {
     return (
         <li className="authors__item">
             <Link to={`/authors/author?id=${author.id}`}>
                 <div className="authors__img__wrap">
-                    <LazyLoadImage
+                    <SmoothLoadedImage
                         effect="opacity"
                         src={itemImg}
                         alt={author.description}
@@ -21,7 +22,7 @@ const Author = ({ author }) => {
                     />
                 </div>
                 <div className="authors__author-wrap">
-                    <LazyLoadImage
+                    <SmoothLoadedImage
                         src={authorImg}
                         alt=""
                         className="authors__author"
@@ -36,4 +37,4 @@ const Author = ({ author }) => {
     );
 };
 
-export default Author;
+export default AuthorCard;

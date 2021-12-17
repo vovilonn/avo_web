@@ -1,6 +1,7 @@
 import React from "react";
 
 import itemImage from "../../images/gallery_img-4.png";
+import SmoothLoadedImage from "../SmoothLoadedImage";
 
 import "./GalleryItem.scss";
 
@@ -8,9 +9,10 @@ export default function GalleryItem() {
     return (
         <li className="gallery__item">
             <a href="">
-                <img
+                <SmoothLoadedImage
                     src="https://imageskincare.ru/images/products/127.jpg"
-                    alt=""
+                    width="100%"
+                    height="auto"
                     className="gallery__img"
                 />
                 <div className="gallery__content">

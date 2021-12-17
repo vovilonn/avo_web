@@ -1,5 +1,6 @@
 import React from "react";
 import bigItemImg from "../../images/gallery_img-1.png";
+import SmoothLoadedImage from "../SmoothLoadedImage";
 
 import "./GalleryBigItem.scss";
 
@@ -7,7 +8,13 @@ export default function GalleryBigItem() {
     return (
         <div className="gallery__item big">
             <a href="">
-                <img src={bigItemImg} alt="" className="gallery__img" />
+                <SmoothLoadedImage
+                    src={bigItemImg}
+                    width="100%"
+                    height="auto"
+                    className="gallery__img"
+                />
+
                 <div className="gallery__content">
                     <div className="gallery__title">Описание работы</div>
                     <div className="gallery__block">

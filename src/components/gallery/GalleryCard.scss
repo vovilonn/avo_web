@@ -23,6 +23,11 @@
 .works__item:hover .works__img {
     width: 120%;
     height: 120%;
+
+    @media (max-width: 980px) {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .works__img {

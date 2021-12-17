@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import MobileNavbar from "./MobileNavbar";
@@ -10,6 +10,7 @@ function App({ children, toggleMenu }) {
     const swipeHandlers = useSwipeable({
         onSwipedRight: () => toggleMenu(true),
     });
+
     return (
         <div {...swipeHandlers}>
             <MobileNavbar />

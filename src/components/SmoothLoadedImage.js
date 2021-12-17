@@ -9,6 +9,7 @@ export default function SmoothLoadedImage({
     className,
     width,
     height,
+    lazy,
 }) {
     const [image, setImage] = useState(null);
     // const SmoothLoadImage = new Image();
@@ -27,15 +28,25 @@ export default function SmoothLoadedImage({
             setImage(SmoothLoadImage);
         }, 100);
     }, []);
-
-    return (
-        <LazyLoadComponent>
+    if (lazy) {
+        return (
+            <LazyLoadComponent>
+                <span
+                    style={{ height, width }}
+                    className={`image__wrap ${image ? "loaded" : ""}`}
+                >
+                    {image || ""}
+                </span>
+            </LazyLoadComponent>
+        );
+    } else {
+        return (
             <span
                 style={{ height, width }}
                 className={`image__wrap ${image ? "loaded" : ""}`}
             >
                 {image || ""}
             </span>
-        </LazyLoadComponent>
-    );
+        );
+    }
 }

@@ -9,6 +9,7 @@ import tickImg from "../../images/tick.svg";
 import authorImg from "../../images/people_big-img.png";
 import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import SmoothLoadedImage from "../../components/SmoothLoadedImage";
 
 export default function Author() {
     const [author, setAuthor] = useState({});
@@ -61,17 +62,19 @@ export default function Author() {
                     </div>
                     <div className="work__block">
                         <h1 className="work__title mobile">
-                            Жуков Аркадий <img src={tickImg} alt="" />
+                            {author.name} <img src={tickImg} alt="" />
                         </h1>
                         <div className="work__img-wrap">
-                            <LazyLoadImage
-                                width="100%"
-                                height="100%"
-                                effect="blur"
-                                src={authorImg}
-                                alt=""
-                                className="work__img"
-                            />
+                            {authorImg ? (
+                                <SmoothLoadedImage
+                                    src={authorImg}
+                                    width="100%"
+                                    height="auto"
+                                    className="work__img"
+                                />
+                            ) : (
+                                ""
+                            )}
                         </div>
                     </div>
                 </div>

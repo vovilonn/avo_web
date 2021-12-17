@@ -9,6 +9,11 @@
     &:hover .authors__img {
         width: 120%;
         height: 120%;
+
+        @media (max-width: 980px) {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     a {

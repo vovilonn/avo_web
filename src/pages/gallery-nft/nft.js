@@ -106,10 +106,7 @@ const NftPage = () => {
                                 <span>ID</span> {nft.id}
                             </span>
                         </h1>
-                        <div
-                            className="work__img-wrap"
-                            style={{ minHeight: "200px" }}
-                        >
+                        <div className="work__img-wrap">
                             <a
                                 href={nft.img}
                                 download
