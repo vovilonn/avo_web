@@ -98,10 +98,16 @@ function Gallery({ type = "nft", authorId, category }) {
                         />
                     </>
                 ) : data.error ? (
-                    <ErrorMessage text="Не найдено :(" />
+                    <>
+                        <ErrorMessage text="Не найдено :(" />
+                        <ul className="gallery__works__list"></ul>
+                    </>
                 ) : (
                     <>
-                        <GalleryGridLoader />
+                        <ul className="gallery__works__list">
+                            <GalleryGridLoader />
+                        </ul>
+
                         <LoadMoreBtn
                             pagesLoaded={pagesLoaded}
                             setPagesLoaded={setPagesLoaded}

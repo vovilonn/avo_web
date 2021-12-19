@@ -1,7 +1,6 @@
 import React from "react";
 
 import "../gallery-nft.scss";
-import "../categories.scss";
 
 import Gallery from "../../components/gallery/Gallery";
 import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
@@ -13,7 +12,7 @@ export default function GalleryNFT() {
             <article className="gallery container">
                 <BreadCrumbs />
                 <GalleryTranding />
-            </article>
+            </article>{" "}
             <Gallery type="nft" />
         </>
     );

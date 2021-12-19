@@ -27,7 +27,11 @@ export default function GalleryCard({ nft }) {
                         width="100%"
                     />
                 </div>
-                <div className="works__title">{nft.title}</div>
+                <div className="works__title">
+                    {nft.title.length > 18
+                        ? nft.title.slice(0, 18) + "..."
+                        : nft.title}
+                </div>
                 <div className="works__block">
                     <button className="works__btn">
                         <LazyLoadImage src={avoImg} />

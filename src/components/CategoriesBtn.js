@@ -29,7 +29,9 @@ const CategoriesBtn = ({
             }}
         >
             <span
-                className={`categories__btn ${category === id ? "active" : ""}`}
+                className={`categories__btn ${
+                    category === id ? "active" : ""
+                } `}
             >
                 {categoryImg.default ? (
                     <img

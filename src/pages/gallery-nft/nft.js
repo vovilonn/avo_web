@@ -56,7 +56,9 @@ const NftPage = () => {
                                     0x721B6EF510fA0C6EecD4BaB055724B0CA6478503
                                 </a>
                                 <div className="work__qr">
-                                    <img src={qrImg} alt="" />
+                                    <a href={nft.qr_code_url} target="_blank">
+                                        <img src={qrImg} alt="" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
