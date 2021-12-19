@@ -1,8 +1,8 @@
+import { Spin } from "antd";
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { setCategoryAction } from "../redux/actions/gallery.action";
 import "./CategoriesBtn.scss";
-import BallScaleLoader from "./loaders/BallScaleLoader";
 
 const CategoriesBtn = ({
     text,
@@ -39,7 +39,7 @@ const CategoriesBtn = ({
                         className="categories__img"
                     />
                 ) : (
-                    <BallScaleLoader scale="0.3" className="categories__img" />
+                    <Spin className="categories__img loader" />
                 )}
                 {text}
             </span>

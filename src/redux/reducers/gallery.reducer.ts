@@ -15,6 +15,6 @@ const initialState = {
 
 export const galleryReducer = createReducer(initialState, (builder) => {
     builder.addCase(setCategoryAction, ({ category }, action) => {
-        category.current = action.payload || null;
+        category.current = +action.payload || null;
     });
 });

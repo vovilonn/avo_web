@@ -47,6 +47,11 @@
 
 .categories__img {
     margin-right: 16px;
+    &.loader {
+        i {
+            background: #78c958;
+        }
+    }
 }
 
 @media (max-width: 520px) {

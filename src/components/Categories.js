@@ -7,12 +7,15 @@ import { setCategoryAction } from "../redux/actions/gallery.action";
 import { Menu } from "antd";
 
 import "./categories.scss";
-import "antd/dist/antd.css";
 
-function Categories({ type = "nft", setCategory, setPagesLoaded }) {
+function Categories({
+    type = "nft",
+    setCategory,
+    setPagesLoaded,
+    currentCatogory,
+}) {
     const [categories, setCategories] = useState([]);
-    const { SubMenu } = Menu;
-
+    const [currentCategoryName, setCurrentCategoryName] = useState("Все NFT");
     useEffect(() => {
         getCategories();
         return () => setCategory(null);
@@ -41,34 +44,37 @@ function Categories({ type = "nft", setCategory, setPagesLoaded }) {
 
     return (
         <article className="categories container">
-            <h2 className="categories__title"> Категории </h2>
-            {/* <div className="categories__btn mobile"> */}
+            <h2 className="categories__title">Категории</h2>
+
             <Menu
-                onClick={() => console.log("click")}
-                defaultSelectedKeys={["1"]}
-                defaultOpenKeys={["sub1"]}
+                defaultSelectedKeys={["null"]}
                 mode="inline"
                 className="categories__btn__mobile"
+                onSelect={(category) => {
+                    if (category.key !== "null") {
+                        const categoryName = categories.find(
+                            ({ id }) => +id === +category.key
+                        ).name;
+                        console.log(categoryName);
+                        setCurrentCategoryName(categoryName);
+                    } else setCurrentCategoryName("Все NFT");
+                    setCategory(category.key === "null" ? null : category.key);
+                }}
             >
-                <SubMenu
+                <Menu.SubMenu
                     key="sub1"
                     icon={<img src={categoryImg} />}
-                    title="Navigation One"
+                    title={`Категория: ${
+                        currentCategoryName ? currentCategoryName : "Все NFT"
+                    }`}
                 >
-                    <Menu.Item key="1">Option 1</Menu.Item>
-                    <Menu.Item key="2">Option 2</Menu.Item>
-                    <Menu.Item key="3">Option 3</Menu.Item>
-                    <Menu.Item key="4">Option 4</Menu.Item>
-                </SubMenu>
+                    {categories.map((category) => (
+                        <Menu.Item key={category.id}>{category.name}</Menu.Item>
+                    ))}
+                    <Menu.Item key="null">Все NFT</Menu.Item>
+                </Menu.SubMenu>
             </Menu>
-            {/* </div> */}
 
-            {/* <div>
-                <button className="categories__btn mobile">
-                    <img src={categoryImg} alt="" className="categories__img" />
-                    DigitalArt
-                </button>
-            </div> */}
             <ul className="categories__list">
                 {categories.map((category) => (
                     <GalleryCategoriesBtn
@@ -76,7 +82,6 @@ function Categories({ type = "nft", setCategory, setPagesLoaded }) {
                         id={category.id}
                         key={category.id}
                         setPagesLoaded={setPagesLoaded}
-                        mobile={true}
                     />
                 ))}
                 <GalleryCategoriesBtn
@@ -90,7 +95,10 @@ function Categories({ type = "nft", setCategory, setPagesLoaded }) {
     );
 }
 
-const mstp = () => ({});
+const mstp = ({ gallery }) => ({
+    currentCatogory: gallery.category.current,
+});
+
 const mdtp = (dispatch) => ({
     setCategory: (categoryId) => dispatch(setCategoryAction(categoryId)),
 });
