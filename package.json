@@ -14,6 +14,7 @@
         "clean": "gatsby clean"
     },
     "dependencies": {
+        "@ant-design/icons": "^4.7.0",
         "@mdx-js/mdx": "^1.6.22",
         "@mdx-js/react": "^1.6.22",
         "@reduxjs/toolkit": "^1.7.1",
@@ -40,6 +41,7 @@
         "react-lazy-load-image-component": "^1.5.1",
         "react-loaders": "^3.0.1",
         "react-redux": "^7.2.6",
+        "react-slick": "^0.28.1",
         "react-swipeable": "^6.2.0",
         "sass": "^1.45.0"
     },

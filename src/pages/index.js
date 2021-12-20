@@ -1,5 +1,27 @@
 import React from "react";
+import "./home.scss";
+import TopBlock from "../components/home/TopBlock";
+import SliderNews from "../components/home/SliderNews";
+import SliderTeam from "../components/home/SliderTeam";
+import SliderAdvantage from "../components/home/SliderAdvantage";
+import HowIsWork from "../components/home/HowIsWork";
+import PopularJob from "../components/home/PopularJob";
+import About from "../components/home/About";
 
-export default function index() {
-    return <div>INDEX PAGE</div>;
-}
+import "../components/home/background.scss";
+
+const Home = () => {
+    return (
+        <div class="container">
+            <TopBlock />
+            <PopularJob />
+            <About />
+            <HowIsWork />
+            <SliderAdvantage />
+            <SliderTeam />
+            <SliderNews />
+        </div>
+    );
+};
+
+export default Home;

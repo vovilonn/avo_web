@@ -8,7 +8,6 @@ import instagramImg from "../../images/instagram.png";
 import tickImg from "../../images/tick.svg";
 import authorImg from "../../images/people_big-img.png";
 import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import SmoothLoadedImage from "../../components/SmoothLoadedImage";
 import WokrDescription from "../../components/WokrDescription";
 

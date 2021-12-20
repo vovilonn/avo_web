@@ -9,7 +9,8 @@
     width: 0;
     pointer-events: none;
     overflow: hidden;
-    transition: all .3s;
+    transition: all 0.3s;
+    z-index: 9999999999999999999999;
 }
 
 .menu.visible {
@@ -30,7 +31,7 @@
     font-size: 22px;
     text-decoration: none;
     color: #000;
-    transition: all .3s;
+    transition: all 0.3s;
     position: relative;
 }
 
@@ -50,7 +51,7 @@
     right: 0;
     margin: 0 auto;
     opacity: 0;
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
 .menu__link:hover:before {

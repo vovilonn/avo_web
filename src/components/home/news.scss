@@ -1,0 +1,52 @@
+@import "../assets/styles/colors";
+@import "../../node_modules/slick-carousel/slick/slick.css";
+@import "../../node_modules/slick-carousel/slick/slick-theme.css";
+
+.news__block {
+    margin-top: 200px;
+    &-top {
+        position: relative;
+        & .title {
+            display: flex;
+            text-align: left;
+            align-items: center;
+            & h2 {
+                font-family: Georgia Pro;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 48px;
+                line-height: 55px;
+                color: $blue;
+            }
+            & .title__img {
+                position: relative;
+                margin-right: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 55px;
+                height: 55px;
+                @media screen and(max-width: 768px) {
+                    margin-right: 20px;
+                }
+                &:before {
+                    content: " ";
+                    position: absolute;
+                    top: 5px;
+                    width: 55px;
+                    height: 55px;
+                    background: $silver;
+                    border-radius: 100%;
+                }
+                & img {
+                    position: relative;
+                    max-width: 44px;
+                    @media screen and(max-width: 768px) {
+                        max-width: 44px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -51,12 +51,17 @@ const NftPage = () => {
                                     href="https://bscscan.com/address/0x721B6EF510fA0C6EecD4BaB055724B0CA6478503"
                                     className="work__token-content"
                                     target="_blank"
+                                    rel="noreferrer"
                                 >
                                     Smart-contract:
                                     0x721B6EF510fA0C6EecD4BaB055724B0CA6478503
                                 </a>
                                 <div className="work__qr">
-                                    <a href={nft.qr_code_url} target="_blank">
+                                    <a
+                                        href={nft.qr_code_url}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         <img src={qrImg} alt="" />
                                     </a>
                                 </div>
@@ -112,6 +117,7 @@ const NftPage = () => {
                                 href={nft.img}
                                 download
                                 target="_blank"
+                                rel="noreferrer"
                                 className="work__download"
                             >
                                 <img src={downloadImg} alt="" />
