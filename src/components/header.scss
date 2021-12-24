@@ -6,7 +6,9 @@
     align-items: center;
 }
 
-.header__logo img {
+.header__logo {
+    height: 100px;
+    width: auto;
 }
 
 .header__block {
@@ -112,6 +114,9 @@
     .header__green-btn {
         width: 220px;
     }
+    .header__logo {
+        height: 80px;
+    }
 }
 
 @media (max-width: 520px) {
@@ -139,7 +144,7 @@
     }
 
     .header__logo {
-        width: 67px;
+        height: 60px;
     }
 
     .header__logo img {

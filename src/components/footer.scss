@@ -16,7 +16,16 @@
 .footer__logo {
 }
 
+.footer-fix {
+    height: 100px;
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+
 .footer__logo img {
+    max-height: 150px;
+    width: auto;
 }
 
 .footer__desc {

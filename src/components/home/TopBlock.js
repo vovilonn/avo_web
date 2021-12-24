@@ -27,9 +27,12 @@ const TopBlock = () => {
                     Равным образом начало повседневной работы по формированию
                     позиции обеспечивает широкому кругу (специалистов)
                 </p>
-                <button className="button_start_use">
-                    Начать пользоваться
-                </button>
+
+                <a href="https://t.me/AvoNFT_bot" target="_blank">
+                    <button className="button_start_use">
+                        Начать пользоваться
+                    </button>
+                </a>
             </div>
             <div className="top__content-right">
                 <div className="promotion_block">
@@ -42,14 +45,20 @@ const TopBlock = () => {
                             <p>Описание работы</p>
                         </div>
                     </div> */}
-                    <button className="telegram__link">
+                    <a
+                        className="telegram__link"
+                        href="https://t.me/AvoNFT_bot"
+                        target="_blank"
+                    >
                         <img src={Telegram} alt="" />
-                    </button>
+                    </a>
                 </div>
             </div>
-            <button className="button_start_use mob__version">
-                Начать пользоваться
-            </button>
+            <a href="https://t.me/AvoNFT_bot" target="_blank">
+                <button className="button_start_use mob__version">
+                    Начать пользоваться
+                </button>
+            </a>
         </section>
     );
 };

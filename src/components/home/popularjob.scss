@@ -290,7 +290,10 @@
             }
             & .slideContent {
                 & .photo {
+                    overflow: hidden;
                     max-width: 230px;
+                    width: auto;
+                    height: 208px;
                     width: 100%;
                     border-radius: 30px 140px 30px 30px;
                     overflow: hidden;

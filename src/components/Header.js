@@ -11,8 +11,8 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 export default function Header() {
     return (
         <header className="header container">
-            <Link to="/" className="header__logo">
-                <img src={logoImg} alt="logo" />
+            <Link to="/">
+                <img src={logoImg} alt="logo" className="header__logo" />
             </Link>
             <div className="header__block">
                 <nav className="nav">

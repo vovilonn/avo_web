@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import ButtonSliderNext from "./ButtonSliderNext";
 import ButtonSliderPrev from "./ButtonSliderPrev";
 import "./popularjob.scss";
 
-import SlidePhoto_1 from "../../assets/image/photo_popular-1.png";
-import SlidePhoto_2 from "../../assets/image/photo_popular-2.png";
-import SlidePhoto_3 from "../../assets/image/photo_popular-3.png";
-
 import Avo from "../../assets/icons/avocado-min.svg";
 
 import Rocket from "../../assets/icons/rocket.svg";
 import ButtonBeforeImg from "../../assets/image/gallery_before-img.png";
+import axios from "axios";
 
 export default function PopularJob() {
     const settings = {
@@ -51,6 +48,17 @@ export default function PopularJob() {
             },
         ],
     };
+
+    const [popularNft, setPopularNft] = useState(null);
+    useEffect(() => {
+        (async function getPopularNFT() {
+            const res = await axios.get(
+                `https://avonft.io/api/nft?limit=9&page=3`
+            );
+            setPopularNft(res.data);
+        })();
+    }, []);
+
     return (
         <section>
             <div className="Popular__Container">
@@ -65,281 +73,36 @@ export default function PopularJob() {
                         </div>
                     </div>
                     <Slider {...settings}>
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_1} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_2} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_3} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_1} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_2} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_3} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_1} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_2} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_3} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_1} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_2} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="Slide__Container-slideItem">
-                            <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_3} alt="" />
-                                </div>
-                                <div className="content">
-                                    <p>Описание работы</p>
-                                    <div className="price">
-                                        <div className="price-icon">
-                                            <img src={Avo} alt="" />
-                                        </div>
-                                        <div className="price-value">
-                                            <p>Цена</p>
-                                            <span>3.14 avo</span>
-                                        </div>
-                                    </div>
-                                    <button className="button-buy">
-                                        Купить
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        {popularNft
+                            ? popularNft.map((nft) => (
+                                  <div className="Slide__Container-slideItem">
+                                      <div className="slideContent">
+                                          <div className="photo">
+                                              <img src={nft.img} alt="" />
+                                          </div>
+                                          <div className="content">
+                                              <p>{nft.title}</p>
+                                              <div className="price">
+                                                  <div className="price-icon">
+                                                      <img src={Avo} alt="" />
+                                                  </div>
+                                                  <div className="price-value">
+                                                      <p>Цена</p>
+                                                      <span>
+                                                          {nft.price} avo
+                                                      </span>
+                                                  </div>
+                                              </div>
+                                              <a>
+                                                  <button className="button-buy">
+                                                      Купить
+                                                  </button>
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              ))
+                            : ""}
                     </Slider>
                     <div className="gallery__button">
                         <img src={ButtonBeforeImg} alt="" /> Галерея NFT

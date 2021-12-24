@@ -19,6 +19,7 @@ const Home = () => {
             <HowIsWork />
             <SliderAdvantage />
             <SliderTeam />
+            <div className="footer-fix"></div>
             {/* <SliderNews /> */}
         </div>
     );
