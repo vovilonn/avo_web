@@ -9,6 +9,7 @@ import Avo from "../../assets/icons/avocado-min.svg";
 import Rocket from "../../assets/icons/rocket.svg";
 import ButtonBeforeImg from "../../assets/image/gallery_before-img.png";
 import axios from "axios";
+import { Link } from "gatsby";
 
 export default function PopularJob() {
     const settings = {
@@ -93,11 +94,13 @@ export default function PopularJob() {
                                                       </span>
                                                   </div>
                                               </div>
-                                              <a>
+                                              <Link
+                                                  to={`/gallery-nft/nft?id=${nft.id}`}
+                                              >
                                                   <button className="button-buy">
                                                       Купить
                                                   </button>
-                                              </a>
+                                              </Link>
                                           </div>
                                       </div>
                                   </div>
