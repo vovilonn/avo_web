@@ -17,7 +17,11 @@ function MobileNavbar({ opened, toggleMenu }) {
     });
 
     return (
-        <nav className={`menu ${opened ? "visible" : ""}`} {...swipeHandlers}>
+        <nav
+            className={`menu ${opened ? "visible" : ""}`}
+            {...swipeHandlers}
+            style={{ zIndex: "99999999999" }}
+        >
             <ul className="menu__list">
                 <li className="menu__item">
                     <Link
