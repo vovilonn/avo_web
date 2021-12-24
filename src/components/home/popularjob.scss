@@ -22,6 +22,18 @@
                 right: 0;
                 top: 0;
             }
+            & > .button_next-slider {
+                @media (max-width: 900px) {
+                    &:before {
+                        display: none;
+                    }
+                }
+                @media (max-width: 768px) {
+                    &:before {
+                        display: block;
+                    }
+                }
+            }
             & .slick-list {
                 position: relative;
                 margin-top: 62px;
@@ -120,7 +132,7 @@
                                 max-width: 150px;
                             }
                             &:not(:last-child) {
-                                margin-right: 30px;
+                                margin-right: 15px;
                                 @media screen and(max-width: 1160px) {
                                     margin-right: 110px;
                                 }

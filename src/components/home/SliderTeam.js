@@ -4,10 +4,10 @@ import ButtonSliderNext from "./ButtonSliderNext";
 import ButtonSliderPrev from "./ButtonSliderPrev";
 import "./sliderteam.scss";
 
+import SlidePhoto_1 from "../../assets/image/human-1.png";
 import SlidePhoto_2 from "../../assets/image/human-2.png";
 import SlidePhoto_3 from "../../assets/image/human-3.png";
 import SlidePhoto_4 from "../../assets/image/human-4.png";
-import SlidePhoto_1 from "../../assets/image/human-1.png";
 import SlidePhoto_5 from "../../assets/image/human-5.png";
 import SlidePhoto_6 from "../../assets/image/human-6.png";
 import TeamIcon from "../../assets/icons/team-icon.svg";
@@ -25,7 +25,7 @@ export default function SliderTeam() {
         prevArrow: <ButtonSliderPrev />,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 900,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
@@ -33,7 +33,7 @@ export default function SliderTeam() {
                 },
             },
             {
-                breakpoint: 540,
+                breakpoint: 680,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
@@ -41,7 +41,7 @@ export default function SliderTeam() {
                 },
             },
             {
-                breakpoint: 400,
+                breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
@@ -51,7 +51,7 @@ export default function SliderTeam() {
         ],
     };
     return (
-        <section>
+        <section id="team">
             <div className="Team__Container">
                 <div className="Slide__Container">
                     <div className="title">

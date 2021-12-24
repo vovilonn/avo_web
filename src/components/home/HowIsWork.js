@@ -9,7 +9,7 @@ import GetStartButton from "./GetStartButton";
 
 const HowIsWork = () => {
     return (
-        <section>
+        <section id="howItWorks">
             <div className="how__work">
                 <div className="how__work-content">
                     <div className="content__title">

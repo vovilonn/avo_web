@@ -1,6 +1,5 @@
 @import "../assets/styles/colors";
 
-// @import "~normalize.css";
 @import "../assets/styles/nullstyled.scss";
 @import "../assets/styles/colors.scss";
 
@@ -285,7 +284,6 @@
 
 section {
     padding: 0 20px;
-    overflow: hidden;
 }
 
 .container {
@@ -334,9 +332,9 @@ section {
 }
 
 main {
+    overflow: hidden;
     background: linear-gradient(186.54deg, #ffffff 2.2%, #fefffb 102%);
     min-height: 100vh;
-    overflow-x: hidden;
 
     section {
         & > div > div {

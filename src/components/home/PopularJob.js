@@ -15,7 +15,7 @@ import ButtonBeforeImg from "../../assets/image/gallery_before-img.png";
 
 export default function PopularJob() {
     const settings = {
-        dots: false,
+        dots: true,
         arrows: true,
         infinite: true,
         slidesToShow: 3,

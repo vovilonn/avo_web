@@ -6,6 +6,7 @@ import logoImg from "../images/logo.svg";
 import "./Header.scss";
 import { Link } from "gatsby";
 import BurgerMenuBtn from "./BurgerMenuBtn";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 export default function Header() {
     return (
@@ -17,30 +18,30 @@ export default function Header() {
                 <nav className="nav">
                     <ul className="nav__list">
                         <li className="nav__item">
-                            <a href="" className="nav__link">
+                            <AnchorLink to="/#about" className="nav__link">
                                 О компании
-                            </a>
+                            </AnchorLink>
                         </li>
                         <li className="nav__item">
-                            <a href="" className="nav__link">
+                            <AnchorLink to="/#howItWorks" className="nav__link">
                                 Как это работает
-                            </a>
+                            </AnchorLink>
                         </li>
                         <li className="nav__item">
-                            <a href="" className="nav__link">
+                            <AnchorLink to="/#advantages" className="nav__link">
                                 Преимущества
-                            </a>
+                            </AnchorLink>
                         </li>
                         <li className="nav__item">
-                            <a href="" className="nav__link">
+                            <AnchorLink to="/#team" className="nav__link">
                                 Команда
-                            </a>
+                            </AnchorLink>
                         </li>
-                        <li className="nav__item">
-                            <a href="" className="nav__link">
+                        {/* <li className="nav__item">
+                            <AnchorLink to="/#news" className="nav__link">
                                 Новости
-                            </a>
-                        </li>
+                            </AnchorLink>
+                        </li> */}
                     </ul>
                 </nav>
                 <div className="header__buttons">

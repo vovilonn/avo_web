@@ -7,7 +7,7 @@ import Rocket from "../../assets/icons/avocado-min.svg";
 
 const About = () => {
     return (
-        <section>
+        <section id="about">
             <div className="about__container">
                 <div className="about__container-content">
                     <div className="content__left">
@@ -40,12 +40,12 @@ const About = () => {
                             </p>
                         </div>
                         <div className="comments">
-                            <p>
+                            <blockquote>
                                 Все работы на нашем маркетплейсе созданы в
                                 стандарте BEP-1155 и размещены в блокчейне
                                 Binance Smart Chain. А купить их можно за
                                 внутренний токен нашей платформы - AVO
-                            </p>
+                            </blockquote>
                         </div>
                     </div>
                 </div>

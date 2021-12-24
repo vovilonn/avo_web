@@ -21,19 +21,9 @@ export default class SliderAdvantage extends Component {
             slidesToScroll: 3,
             nextArrow: <ButtonSliderNext />,
             prevArrow: <ButtonSliderPrev />,
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                    },
-                },
-            ],
         };
         return (
-            <section>
+            <section id="advantages">
                 <div className="Advantage__Container">
                     <div className="Slide__Container">
                         <div className="title">

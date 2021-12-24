@@ -8,6 +8,7 @@ module.exports = {
         "gatsby-plugin-image",
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-typescript",
+        "gatsby-plugin-anchor-links",
         {
             resolve: "gatsby-plugin-manifest",
             options: {
@@ -32,6 +33,12 @@ module.exports = {
                 path: "./src/pages/",
             },
             __key: "pages",
+        },
+        {
+            resolve: "gatsby-plugin-anchor-links",
+            options: {
+                offset: -100,
+            },
         },
     ],
 };

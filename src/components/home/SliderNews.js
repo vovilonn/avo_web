@@ -47,7 +47,7 @@ export default class SliderNews extends Component {
             ],
         };
         return (
-            <section>
+            <section id="news">
                 <div className="News__Container">
                     <div className="Slide__Container">
                         <div className="title">

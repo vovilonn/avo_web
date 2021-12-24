@@ -9,7 +9,7 @@
 
         margin-bottom: 140px;
         margin-top: 190px;
-        @media screen and(max-width: 768px) {
+        @media screen and(max-width: 900px) {
             margin-top: 40px;
             margin-bottom: 40px;
 
@@ -21,18 +21,20 @@
         .slick-list {
             overflow: visible;
             margin-top: 50px;
-            @media screen and(max-width: 768px) {
+            @media screen and(max-width: 900px) {
                 margin-top: 20px;
             }
             & .slick-track {
                 display: flex;
                 align-items: flex-end;
                 height: 450px;
-                @media screen and(max-width: 768px) {
+                @media screen and(max-width: 900px) {
                     display: block;
                     height: 100%;
                     transform: none !important;
                     text-align: center;
+                    max-width: 100%;
+                    text-align: -webkit-center;
                 }
             }
         }
@@ -43,7 +45,7 @@
             text-align: left;
             display: flex;
             align-items: center;
-            @media screen and(max-width: 768px) {
+            @media screen and(max-width: 900px) {
                 position: relative;
                 justify-content: center;
             }
@@ -54,7 +56,7 @@
                 font-size: 48px;
                 line-height: 55px;
                 color: $blue;
-                @media screen and(max-width: 768px) {
+                @media screen and(max-width: 900px) {
                     font-size: 24px;
                     line-height: 27px;
                 }
@@ -68,7 +70,7 @@
                 justify-content: center;
                 width: 55px;
                 height: 55px;
-                @media screen and(max-width: 768px) {
+                @media screen and(max-width: 900px) {
                     margin-right: 20px;
                 }
                 &:before {
@@ -83,7 +85,7 @@
                 & img {
                     position: relative;
                     max-width: 55px;
-                    @media screen and(max-width: 768px) {
+                    @media screen and(max-width: 900px) {
                         max-width: 55px;
                     }
                 }
@@ -102,7 +104,7 @@
             padding: 85px 20px 30px;
             overflow: hidden;
             //border-radius: 170px 40px  40px
-            @media screen and(max-width: 768px) {
+            @media screen and(max-width: 900px) {
                 height: 100%;
                 padding: 19px 15px 18px;
                 max-width: 460px;
@@ -114,7 +116,7 @@
                     width: 100%;
                     margin: 0 auto;
                     transition: all 0.1s;
-                    @media screen and(max-width: 768px) {
+                    @media screen and(max-width: 900px) {
                         position: absolute;
                         width: 44px;
                         top: 24px;
@@ -146,7 +148,7 @@
                         line-height: 34px;
                         color: white;
                         transition: all 3s;
-                        @media screen and(max-width: 768px) {
+                        @media screen and(max-width: 900px) {
                             font-size: 24px;
                             line-height: 27px;
                             max-width: 80%;
@@ -163,7 +165,7 @@
 
                         position: absolute;
                         top: 100%;
-                        @media screen and(max-width: 768px) {
+                        @media screen and(max-width: 900px) {
                             position: relative;
                             font-size: 12px;
                             line-height: 18px;
@@ -202,17 +204,21 @@
 }
 
 .Advantage__Container .slick-track > .slick-slide {
+    margin: 10px;
     opacity: 0;
+    @media screen and(max-width: 900px) {
+        width: 100% !important;
+    }
     &.slick-active {
         opacity: 1;
     }
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 900px) {
         opacity: 1;
     }
     &:nth-child(3n + 1) {
         & .Slide__Container-slideItem {
             border-radius: 170px 40px 40px;
-            @media screen and(max-width: 768px) {
+            @media screen and(max-width: 900px) {
                 border-radius: 20px;
             }
         }
@@ -221,7 +227,7 @@
     &:nth-child(3n + 2) {
         & .Slide__Container-slideItem {
             border-radius: 40px;
-            @media screen and(max-width: 768px) {
+            @media screen and(max-width: 900px) {
                 border-radius: 20px;
             }
         }
@@ -230,7 +236,7 @@
     &:nth-child(3n + 3) {
         & .Slide__Container-slideItem {
             border-radius: 40px 170px 40px 40px;
-            @media screen and(max-width: 768px) {
+            @media screen and(max-width: 900px) {
                 border-radius: 20px;
             }
         }
@@ -240,7 +246,7 @@
         position: relative;
         cursor: pointer;
         transition: all 0.4s;
-        @media screen and(min-width: 768px) {
+        @media screen and(min-width: 900px) {
             &:hover {
                 border-radius: 40px;
                 height: 472px;

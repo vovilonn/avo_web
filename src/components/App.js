@@ -10,7 +10,7 @@ function App({ children, toggleMenu }) {
     const [innerWidth, setInnerWidth] = useState();
     const swipeHandlers = useSwipeable({
         onSwipedRight: () => toggleMenu(true),
-        delta: { right: innerWidth * 0.6 },
+        delta: { right: innerWidth * 0.2 },
     });
 
     useEffect(() => {

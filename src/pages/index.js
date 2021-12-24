@@ -12,14 +12,14 @@ import "../components/home/background.scss";
 
 const Home = () => {
     return (
-        <div class="container">
+        <div className="container">
             <TopBlock />
             <PopularJob />
             <About />
             <HowIsWork />
             <SliderAdvantage />
             <SliderTeam />
-            <SliderNews />
+            {/* <SliderNews /> */}
         </div>
     );
 };
