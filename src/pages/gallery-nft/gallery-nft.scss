@@ -2,10 +2,6 @@
     display: none;
 }
 
-.gallery {
-    padding-top: 15px;
-}
-
 .gallery__list {
     list-style: none;
     display: flex;
@@ -168,10 +164,6 @@
 @media (max-width: 400px) {
     .gallery__item.big {
         width: 100%;
-    }
-
-    .gallery {
-        padding-top: 20px;
     }
 }
 

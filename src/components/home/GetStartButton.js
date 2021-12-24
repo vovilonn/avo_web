@@ -2,7 +2,11 @@ import React from "react";
 import "./getstartbutton.scss";
 
 const GetStartButton = () => {
-    return <button className="button_start_use">Начать пользоваться</button>;
+    return (
+        <a href="https://t.me/AvoNFT_bot" target="_blank">
+            <button className="button_start_use">Начать пользоваться</button>
+        </a>
+    );
 };
 
 export default GetStartButton;

@@ -28,6 +28,9 @@ body {
 }
 
 .work__title {
+    display: flex;
+    gap: 15px;
+    align-items: center;
     font-family: "Georgia Pro", sans-serif;
     font-size: 36px;
     max-width: 430px;

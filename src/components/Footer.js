@@ -7,6 +7,7 @@ import avoImg from "../images/avo.svg";
 
 import "./Footer.scss";
 import { Link } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const Footer = () => {
     return (
@@ -43,34 +44,41 @@ const Footer = () => {
                 <nav className="footer__nav">
                     <ul className="footer__list">
                         <li className="footer__item">
-                            <a href="" className="footer__link">
+                            <AnchorLink to="/#about" className="footer__link">
                                 О компании
-                            </a>
+                            </AnchorLink>
                         </li>
+
                         <li className="footer__item">
-                            <a href="" className="footer__link">
-                                Как это работает
-                            </a>
-                        </li>
-                        <li className="footer__item">
-                            <a href="" className="footer__link">
+                            <AnchorLink
+                                to="/#advantages"
+                                className="footer__link"
+                            >
                                 Преимущества
-                            </a>
+                            </AnchorLink>
                         </li>
                     </ul>
                     <ul className="footer__list">
                         <li className="footer__item">
-                            <a href="" className="footer__link">
+                            <AnchorLink
+                                to="/#howItWorks"
+                                className="footer__link"
+                            >
+                                Как это работает
+                            </AnchorLink>
+                        </li>
+                        <li className="footer__item">
+                            <AnchorLink to="/#team" className="footer__link">
                                 Команда
-                            </a>
+                            </AnchorLink>
                         </li>
-                        <li className="footer__item">
-                            <a href="" className="footer__link">
+                        {/* <li className="footer__item">
+                            <AnchorLink to="/#news" className="footer__link">
                                 Новости
-                            </a>
-                        </li>
+                            </AnchorLink>
+                        </li> */}
                     </ul>
-                    <ul className="footer__list">
+                    {/* <ul className="footer__list">
                         <li className="footer__item">
                             <a href="" className="footer__link">
                                 Юр. информация
@@ -81,7 +89,7 @@ const Footer = () => {
                                 Документы
                             </a>
                         </li>
-                    </ul>
+                    </ul> */}
                 </nav>
                 <a
                     href="https://t.me/AvoNFT_bot"

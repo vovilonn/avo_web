@@ -60,7 +60,8 @@ function Gallery({ type = "nft", authorId, category }) {
             setTimeout(() => {
                 setLoading(false);
             }, 350);
-            if (res.data.error) {
+
+            if (res.data.error && data.length === 0) {
                 setData(res.data);
             } else {
                 const updatedData =
@@ -91,11 +92,15 @@ function Gallery({ type = "nft", authorId, category }) {
                                 </LazyLoadComponent>
                             ))}
                         </ul>
-                        <LoadMoreBtn
-                            pagesLoaded={pagesLoaded}
-                            setPagesLoaded={setPagesLoaded}
-                            loading={loading}
-                        />
+                        {data.length < LIMIT_PER_PAGE ? (
+                            ""
+                        ) : (
+                            <LoadMoreBtn
+                                pagesLoaded={pagesLoaded}
+                                setPagesLoaded={setPagesLoaded}
+                                loading={loading}
+                            />
+                        )}
                     </>
                 ) : data.error ? (
                     <>
@@ -107,12 +112,6 @@ function Gallery({ type = "nft", authorId, category }) {
                         <ul className="gallery__works__list">
                             <GalleryGridLoader />
                         </ul>
-
-                        <LoadMoreBtn
-                            pagesLoaded={pagesLoaded}
-                            setPagesLoaded={setPagesLoaded}
-                            loading={loading}
-                        />
                     </>
                 )}
             </article>

@@ -91,11 +91,7 @@ export default function Author() {
                 </div>
             </article>
 
-            {author.id ? (
-                <Gallery type="by-author" authorId={author.id} />
-            ) : (
-                "Loading..."
-            )}
+            {author.id ? <Gallery type="by-author" authorId={author.id} /> : ""}
         </>
     );
 }

@@ -76,11 +76,18 @@ export default function PopularJob() {
                     <Slider {...settings}>
                         {popularNft
                             ? popularNft.map((nft) => (
-                                  <div className="Slide__Container-slideItem">
+                                  <div
+                                      className="Slide__Container-slideItem"
+                                      key={nft.id}
+                                  >
                                       <div className="slideContent">
-                                          <div className="photo">
-                                              <img src={nft.img} alt="" />
-                                          </div>
+                                          <Link
+                                              to={`/gallery-nft/nft?id=${nft.id}`}
+                                          >
+                                              <div className="photo">
+                                                  <img src={nft.img} alt="" />
+                                              </div>
+                                          </Link>
                                           <div className="content">
                                               <p>{nft.title}</p>
                                               <div className="price">
