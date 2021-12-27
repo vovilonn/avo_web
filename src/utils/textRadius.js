@@ -1,7 +1,4 @@
-
-
 export function letterify() {
-
     let elems = document.querySelectorAll("*[data-letterify]");
     wrapTextNodes(elems);
 }
@@ -10,7 +7,7 @@ function wrapTextNodes(elems) {
     let nodeType = {
         element: 1,
         attribute: 2,
-        text: 3
+        text: 3,
     };
     for (let i = 0; i < elems.length; i++) {
         let elem = elems[i];
@@ -33,4 +30,3 @@ function wrapTextNodes(elems) {
         }
     }
 }
-

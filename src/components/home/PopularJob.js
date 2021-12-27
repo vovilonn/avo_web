@@ -10,6 +10,8 @@ import Rocket from "../../assets/icons/rocket.svg";
 import ButtonBeforeImg from "../../assets/image/gallery_before-img.png";
 import axios from "axios";
 import { Link } from "gatsby";
+import { makeNftImageSrc } from "../../utils/nft.utils";
+import GalleryBtn from "../GalleryBtn";
 
 export default function PopularJob() {
     const settings = {
@@ -53,9 +55,7 @@ export default function PopularJob() {
     const [popularNft, setPopularNft] = useState(null);
     useEffect(() => {
         (async function getPopularNFT() {
-            const res = await axios.get(
-                `https://avonft.io/api/nft?limit=9&page=3`
-            );
+            const res = await axios.get(`https://avonft.io/api/nft?limit=9`);
             setPopularNft(res.data);
         })();
     }, []);
@@ -84,9 +84,16 @@ export default function PopularJob() {
                                           <Link
                                               to={`/gallery-nft/nft?id=${nft.id}`}
                                           >
-                                              <div className="photo">
-                                                  <img src={nft.img} alt="" />
-                                              </div>
+                                              <div
+                                                  className="photo"
+                                                  style={{
+                                                      backgroundImage: `url(
+                                                          ${makeNftImageSrc(
+                                                              nft
+                                                          )}
+                                                      )`,
+                                                  }}
+                                              ></div>
                                           </Link>
                                           <div className="content">
                                               <p>{nft.title}</p>
@@ -114,9 +121,10 @@ export default function PopularJob() {
                               ))
                             : ""}
                     </Slider>
-                    <div className="gallery__button">
-                        <img src={ButtonBeforeImg} alt="" /> Галерея NFT
-                    </div>
+                    <GalleryBtn
+                        to="/gallery-nft"
+                        style={{ margin: "20px auto 0 auto" }}
+                    />
                 </div>
             </div>
         </section>

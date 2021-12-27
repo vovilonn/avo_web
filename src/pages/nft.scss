@@ -271,7 +271,7 @@ body {
     padding: 13px;
     right: 44px;
     bottom: 37px;
-    z-index: 99999999999;
+    z-index: 2;
 }
 
 .work__img {
@@ -332,9 +332,6 @@ body {
 }
 
 @media (max-width: 410px) {
-    .work__download {
-        display: none;
-    }
     .work__btn {
         padding-left: 10px;
         padding-right: 10px;

@@ -54,7 +54,7 @@ function Gallery({ type = "nft", authorId, category }) {
             }
 
             console.log(
-                "🚀 ~ file: Gallery.js ~ line 59 ~ getData ~ pagesLoaded",
+                "🚀 ~ file: Gallery.js ~ lin 59 ~ getData ~ pagesLoadeed",
                 pagesLoaded
             );
             setTimeout(() => {

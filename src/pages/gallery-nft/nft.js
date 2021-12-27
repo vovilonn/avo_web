@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Buybtn from "../../components/BuyBtn";
+import BuyBtn from "../../components/BuyBtn";
 import queryString from "query-string";
 import axios from "axios";
 import amountImg from "../../images/nft.svg";
 import avoImg from "../../images/avo.svg";
 import authorImg from "../../images/people.png";
 import qrImg from "../../images/qr.png";
-import downloadImg from "../../images/download.svg";
 
 import "../nft.scss";
 import BreadCrumbs from "../../components/bread_crumbs/BreadCrumbs";
 import { Link } from "gatsby";
-import SmoothLoadedImage from "../../components/SmoothLoadedImage";
 import WokrDescription from "../../components/WokrDescription";
+import NftView from "../../components/gallery/NftView";
 
 const NftPage = () => {
     const [nft, setNft] = useState({});
@@ -56,15 +55,17 @@ const NftPage = () => {
                                     Smart-contract:
                                     0x721B6EF510fA0C6EecD4BaB055724B0CA6478503
                                 </a>
-                                <div className="work__qr">
-                                    <a
-                                        href={nft.qr_code_url}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        <img src={qrImg} alt="" />
-                                    </a>
-                                </div>
+                                {nft.qr_code_url && (
+                                    <div className="work__qr">
+                                        <a
+                                            href={nft.qr_code_url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            <img src={qrImg} alt="" />
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         </div>
                         <div className="work__author-caption work__caption">
@@ -102,7 +103,9 @@ const NftPage = () => {
                                     <img src={avoImg} alt="" /> {nft.price} avo
                                 </div>
                             </div>
-                            <Buybtn href={nft.url} />
+                            <BuyBtn
+                                href={`https://t.me/AvoNFT_bot?start=nft_${nft.id}`}
+                            />
                         </div>
                     </div>
                     <div className="work__block">
@@ -112,27 +115,7 @@ const NftPage = () => {
                                 <span>ID</span> {nft.id}
                             </span>
                         </h1>
-                        <div className="work__img-wrap">
-                            <a
-                                href={nft.img}
-                                download
-                                target="_blank"
-                                rel="noreferrer"
-                                className="work__download"
-                            >
-                                <img src={downloadImg} alt="" />
-                            </a>
-                            {nft.id ? (
-                                <SmoothLoadedImage
-                                    src={nft.img}
-                                    width="100%"
-                                    height="auto"
-                                    className="work__img"
-                                />
-                            ) : (
-                                ""
-                            )}
-                        </div>
+                        {nft.id ? <NftView nft={nft} /> : ""}
                     </div>
                 </div>
             </article>

@@ -8,7 +8,6 @@ import SlidePhoto_1 from "../../assets/image/adv_1.png";
 import SlidePhoto_2 from "../../assets/image/adv_2.png";
 
 import Crown from "../../assets/icons/crown.svg";
-import { letterify } from "../../utils/textRadius";
 import Rocket from "../../assets/icons/avocado-min.svg";
 
 export default class SliderAdvantage extends Component {

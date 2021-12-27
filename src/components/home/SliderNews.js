@@ -7,7 +7,6 @@ import "./slidernews.scss";
 import SlidePhoto_1 from "../../assets/image/slide_ph-1.png";
 import SlidePhoto_2 from "../../assets/image/slide_ph-2.png";
 import MarketingPerspective from "../../assets/icons/marketing_perspecive.svg";
-import { letterify } from "../../utils/textRadius";
 
 export default class SliderNews extends Component {
     render() {

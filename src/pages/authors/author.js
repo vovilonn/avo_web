@@ -78,7 +78,7 @@ export default function Author() {
                             </ul>
                             {authorImg ? (
                                 <SmoothLoadedImage
-                                    src={authorImg}
+                                    src={"https://admin.avonft.io" + author.img}
                                     width="100%"
                                     height="auto"
                                     className="work__img"
