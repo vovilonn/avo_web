@@ -2,7 +2,8 @@ import React from "react";
 import ReactPlayer from "react-player";
 import categories from "../../utils/categories.json";
 import SmoothLoadedImage from "../SmoothLoadedImage";
-import DownloadBtn from "./DownloadBtn";
+import DownloadFileBtn from "./DownloadFileBtn";
+import DownloadImageBtn from "./DownloadImageBtn";
 import MusicPlayer from "./MusicPlayer";
 
 const NftView = ({ nft }) => {
@@ -11,27 +12,35 @@ const NftView = ({ nft }) => {
     const isMusic = nft.category_id === categories["Музыка"];
 
     return isMusic ? (
-        <MusicPlayer src={`https://admin.avonft.io/${nft.other_files}`} />
+        <>
+            <DownloadFileBtn src={nft.other_files} />
+            <MusicPlayer src={`https://admin.avonft.io/${nft.other_files}`} />
+        </>
     ) : (
         <div className="work__img-wrap">
-            <DownloadBtn />
             {isVideo ? (
-                <ReactPlayer
-                    url={`https://admin.avonft.io/${nft.other_files}`}
-                    playing
-                    muted
-                    loop={true}
-                    className="work__img"
-                    height="auto"
-                    width="100%"
-                />
+                <>
+                    <DownloadFileBtn src={nft.other_files} />
+                    <ReactPlayer
+                        url={`https://admin.avonft.io/${nft.other_files}`}
+                        playing
+                        muted
+                        loop={true}
+                        className="work__img"
+                        height="auto"
+                        width="100%"
+                    />
+                </>
             ) : (
-                <SmoothLoadedImage
-                    src={nft.img}
-                    width="100%"
-                    height="auto"
-                    className="work__img"
-                />
+                <>
+                    <DownloadImageBtn src={nft.img} />
+                    <SmoothLoadedImage
+                        src={nft.img}
+                        width="100%"
+                        height="auto"
+                        className="work__img"
+                    />
+                </>
             )}
         </div>
     );
