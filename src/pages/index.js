@@ -17,6 +17,7 @@ const Home = () => {
             <PopularJob />
             <About />
             <HowIsWork />
+
             <SliderAdvantage />
             <SliderTeam />
             <div className="footer-fix"></div>

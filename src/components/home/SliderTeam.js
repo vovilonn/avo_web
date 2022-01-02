@@ -4,12 +4,15 @@ import ButtonSliderNext from "./ButtonSliderNext";
 import ButtonSliderPrev from "./ButtonSliderPrev";
 import "./sliderteam.scss";
 
-import SlidePhoto_1 from "../../assets/image/human-1.png";
-import SlidePhoto_2 from "../../assets/image/human-2.png";
-import SlidePhoto_3 from "../../assets/image/human-3.png";
-import SlidePhoto_4 from "../../assets/image/human-4.png";
-import SlidePhoto_5 from "../../assets/image/human-5.png";
-import SlidePhoto_6 from "../../assets/image/human-6.png";
+import authorImg_1 from "../../images/turin_a.jpg";
+import authorImg_2 from "../../images/turin_k.jpg";
+import authorImg_3 from "../../images/borodin_b.jpg";
+import authorImg_4 from "../../images/gruy_s.jpg";
+import authorImg_5 from "../../images/lituchy_v.jpg";
+import authorImg_6 from "../../images/sokolov_r.jpg";
+import authorImg_7 from "../../images/kovalenko_a.jpg";
+import authorImg_8 from "../../images/kushakov_a.jpg";
+import authorImg_9 from "../../images/mezhekov_m.jpg";
 import TeamIcon from "../../assets/icons/team-icon.svg";
 import { letterify } from "../../utils/textRadius";
 
@@ -20,7 +23,7 @@ export default function SliderTeam() {
         dots: false,
         infinite: false,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         nextArrow: <ButtonSliderNext />,
         prevArrow: <ButtonSliderPrev />,
         responsive: [
@@ -56,7 +59,6 @@ export default function SliderTeam() {
                 <div className="Slide__Container">
                     <div className="title">
                         <div className="title__img">
-                            {" "}
                             <img src={TeamIcon} alt="" />
                         </div>
                         <h2>Команда проекта</h2>
@@ -65,198 +67,143 @@ export default function SliderTeam() {
                     <Slider {...settings}>
                         <div className="Slide__Container-slideItem">
                             <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_1} alt="" />
-                                </div>
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_1}")`,
+                                    }}
+                                ></div>
                                 <div className="content">
-                                    <h4>Жуков Аркадий</h4>
-                                    <span>#NFT Артист</span>
-                                    <p>
-                                        Небольшое описание члена команды в вде
-                                        строки
-                                    </p>
-                                    <div className="marker__list-job">
-                                        <div className="rotate__text">
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_1"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                            <div className="arrow__link"></div>
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_2"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <h4>Тюрин Александр</h4>
+                                    <span>#Фаундер AvoNFT</span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="Slide__Container-slideItem">
                             <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_2} alt="" />
-                                </div>
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_2}")`,
+                                    }}
+                                ></div>
                                 <div className="content">
-                                    <h4>Артемий Лебедев</h4>
-                                    <span>#Разработчик платформы</span>
-                                    <p>
-                                        Небольшое описание члена команды в вде
-                                        строки
-                                    </p>
-                                    <div className="marker__list-job">
-                                        <div className="rotate__text">
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_1"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                            <div className="arrow__link"></div>
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_2"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <h4>Тюрин Кирилл</h4>
+                                    <span>#Департамент комьюнити</span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="Slide__Container-slideItem">
                             <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_3} alt="" />
-                                </div>
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_3}")`,
+                                    }}
+                                ></div>
                                 <div className="content">
-                                    <h4>Вера Иванова</h4>
-                                    <span>#Дизайнер</span>
-                                    <p>
-                                        Небольшое описание члена команды в вде
-                                        строки
-                                    </p>
-                                    <div className="marker__list-job">
-                                        <div className="rotate__text">
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_1"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                            <div className="arrow__link"></div>
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_2"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <h4>Бородин Богдан</h4>
+                                    <span>
+                                        #PM департамент программных разработок
+                                    </span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="Slide__Container-slideItem">
                             <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_4} alt="" />
-                                </div>
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_4}")`,
+                                    }}
+                                ></div>
                                 <div className="content">
-                                    <h4>Лысый из Бразерс</h4>
-                                    <span>#NFT Продюсер</span>
-                                    <p>
-                                        Небольшое описание члена команды в вде
-                                        строки
-                                    </p>
-                                    <div className="marker__list-job">
-                                        <div className="rotate__text">
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_1"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                            <div className="arrow__link"></div>
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_2"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <h4>Груй Сергей</h4>
+                                    <span>Департамент модерации</span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="Slide__Container-slideItem">
                             <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_5} alt="" />
-                                </div>
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_5}")`,
+                                    }}
+                                ></div>
                                 <div className="content">
-                                    <h4>Рикардо Милос</h4>
-                                    <span>#Подтанцовка</span>
-                                    <p>
-                                        Небольшое описание члена команды в вде
-                                        строки
-                                    </p>
-                                    <div className="marker__list-job">
-                                        <div className="rotate__text">
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_1"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                            <div className="arrow__link"></div>
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_2"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <h4>Литучий Владимир</h4>
+                                    <span>Юридический департамент</span>
                                 </div>
                             </div>
                         </div>
 
                         <div className="Slide__Container-slideItem">
                             <div className="slideContent">
-                                <div className="photo">
-                                    <img src={SlidePhoto_6} alt="" />
-                                </div>
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_6}")`,
+                                    }}
+                                ></div>
                                 <div className="content">
-                                    <h4>Саша Грэй</h4>
-                                    <span>#Актриса</span>
-                                    <p>
-                                        Небольшое описание члена команды в вде
-                                        строки
-                                    </p>
-                                    <div className="marker__list-job">
-                                        <div className="rotate__text">
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_1"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                            <div className="arrow__link"></div>
-                                            <span
-                                                data-letterify
-                                                className="rounded rounded_2"
-                                            >
-                                                • Посмотреть работы
-                                            </span>
-                                        </div>
-                                    </div>
+                                    <h4>Соколов Руслан</h4>
+                                    <span>
+                                        Руководитель направления АВО Гейм
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="Slide__Container-slideItem">
+                            <div className="slideContent">
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_7}")`,
+                                    }}
+                                ></div>
+                                <div className="content">
+                                    <h4>Коваленко Алексей</h4>
+                                    <span>
+                                        Руководитель направления АВО Спорт
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="Slide__Container-slideItem">
+                            <div className="slideContent">
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_8}")`,
+                                    }}
+                                ></div>
+                                <div className="content">
+                                    <h4>Кушаков Антон</h4>
+                                    <span>
+                                        Руководитель направления АВО Дизайн
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="Slide__Container-slideItem">
+                            <div className="slideContent">
+                                <div
+                                    className="photo"
+                                    style={{
+                                        backgroundImage: `url("${authorImg_9}")`,
+                                    }}
+                                ></div>
+                                <div className="content">
+                                    <h4>Межеков Максим</h4>
+                                    <span>Департамент администрирования</span>
                                 </div>
                             </div>
                         </div>

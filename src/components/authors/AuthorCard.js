@@ -22,7 +22,6 @@ const AuthorCard = ({ author }) => {
                 </div>
 
                 <div className="authors__author-wrap" />
-
                 <div className="authors__name">{author.name}</div>
                 <div className="authors__desc">{author.description}</div>
             </Link>

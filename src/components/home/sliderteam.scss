@@ -81,15 +81,6 @@
                 @media screen and(max-width: 900px) {
                     margin-right: 9px;
                 }
-                &:before {
-                    content: " ";
-                    position: absolute;
-                    top: 5px;
-                    width: 55px;
-                    height: 55px;
-                    background: $silver;
-                    border-radius: 100%;
-                }
                 & img {
                     position: relative;
                     max-width: 44px;
@@ -105,9 +96,7 @@
             & .button_next-slider {
                 top: 75px;
                 @media screen and(max-width: 900px) {
-                    top: auto;
-                    bottom: 135px;
-                    right: -15px;
+                    display: none;
                 }
             }
 
@@ -140,6 +129,7 @@
                 //padding: 20px 20px;
 
                 & .photo {
+                    background-size: cover;
                     position: relative;
                     width: 100%;
                     height: 405px;
@@ -151,24 +141,7 @@
                     border-bottom: none;
                     border-radius: 39px 39px 0 0;
                     @media screen and(max-width: 900px) {
-                        max-height: 270px;
                         border-radius: 23.7673px 23.7673px 0px 0px;
-                    }
-                    @media screen and(max-width: 768px) {
-                        max-height: 200px;
-                    }
-                    &:before {
-                        content: " ";
-                        background: linear-gradient(
-                            180deg,
-                            #e1e53c 0%,
-                            #acd044 100%
-                        );
-                        position: absolute;
-                        width: 451px;
-                        height: 100%;
-                        bottom: -150px;
-                        border-radius: 100%;
                     }
 
                     & img {
@@ -204,12 +177,11 @@
                         font-style: normal;
                         font-weight: normal;
                         font-size: 24px;
-                        line-height: 25px;
+                        margin-top: 10px;
                         color: $white;
                         width: 100%;
                         @media screen and(max-width: 900px) {
                             font-size: 14px;
-                            line-height: 16px;
                         }
                     }
 
@@ -218,14 +190,13 @@
                         font-style: normal;
                         font-weight: normal;
                         font-size: 14px;
-                        line-height: 25px;
+                        line-height: 14px;
                         color: rgba(255, 255, 255, 0.61);
-                        margin: 3px 0 6px;
+                        margin: 8px 0 6px;
                         max-width: 230px;
                         width: 100%;
                         @media screen and(max-width: 900px) {
                             font-size: 10px;
-                            line-height: 16px;
                         }
                     }
 
@@ -340,8 +311,8 @@
         }
 
         & .slick-list {
-            overflow: visible;
-            margin-top: 50px;
+            overflow: hidden;
+            margin-top: 120px;
 
             @media screen and(max-width: 768px) {
                 margin-top: 10px;
@@ -354,9 +325,7 @@
                 height: 620px;
                 display: flex;
                 align-items: flex-end;
-                @media screen and(max-width: 900px) {
-                    height: 100%;
-                }
+
                 & .slick-slide {
                     opacity: 0;
                     @media screen and(max-width: 500px) {
