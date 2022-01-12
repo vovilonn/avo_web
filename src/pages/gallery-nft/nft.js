@@ -19,9 +19,7 @@ const NftPage = () => {
     useEffect(() => {
         (async function getData() {
             const query = queryString.parse(window.location.search);
-            const res = await axios.get(
-                `https://avonft.io/api/nft/${query.id}`
-            );
+            const res = await axios.get(`https://avonft.io/api/nft/${query.id}`);
             console.log(res.data);
             setNft(res.data);
         })();
@@ -40,11 +38,7 @@ const NftPage = () => {
                             </span>
                         </h1>
                         <div className="work__descriptions">
-                            {nft.description ? (
-                                <WokrDescription text={nft.description} />
-                            ) : (
-                                ""
-                            )}
+                            {nft.description ? <WokrDescription text={nft.description} /> : ""}
                             <div className="work__token">
                                 <a
                                     href="https://bscscan.com/address/0x721B6EF510fA0C6EecD4BaB055724B0CA6478503"
@@ -52,46 +46,32 @@ const NftPage = () => {
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    Smart-contract:
-                                    0x721B6EF510fA0C6EecD4BaB055724B0CA6478503
+                                    Smart-contract: 0x721B6EF510fA0C6EecD4BaB055724B0CA6478503
                                 </a>
                                 {nft.qr_code_url && (
                                     <div className="work__qr">
-                                        <a
-                                            href={nft.qr_code_url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
+                                        <a href={nft.qr_code_url} target="_blank" rel="noreferrer">
                                             <img src={qrImg} alt="" />
                                         </a>
                                     </div>
                                 )}
                             </div>
                         </div>
-                        <div className="work__author-caption work__caption">
-                            Автор
-                        </div>
+                        <div className="work__author-caption work__caption">Автор</div>
                         <div className="work__author">
-                            <img
-                                src={authorImg}
-                                alt=""
+                            <div
+                                style={{ backgroundImage: `url("${nft.author && nft.author.img}")` }}
                                 className="work__author-img"
                             />
                             <div className="work__author-content">
-                                <div className="work__author-name">
-                                    {nft.author && nft.author.name}
-                                </div>
-                                <Link
-                                    to={`/authors/author?id=${nft.author_id}`}
-                                    className="work__all-works"
-                                >
+                                <div className="work__author-name">{nft.author && nft.author.name}</div>
+                                <Link to={`/authors/author?id=${nft.author_id}`} className="work__all-works">
                                     Посмотреть все работы
                                 </Link>
                             </div>
                         </div>
                         <div className="work__check">
-                            <img src={amountImg} alt="" /> Доступно к
-                            покупке:&nbsp;
+                            <img src={amountImg} alt="" /> Доступно к покупке:&nbsp;
                             <span>
                                 {nft.available}/{nft.emission}
                             </span>
@@ -103,9 +83,7 @@ const NftPage = () => {
                                     <img src={avoImg} alt="" /> {nft.price} avo
                                 </div>
                             </div>
-                            <BuyBtn
-                                href={`https://t.me/AvoNFT_bot?start=nft_${nft.id}`}
-                            />
+                            <BuyBtn href={`https://t.me/AvoNFT_bot?start=nft_${nft.id}`} />
                         </div>
                     </div>
                     <div className="work__block">
